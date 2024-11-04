@@ -22,6 +22,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+footer svg path,
 header svg path {
   @apply fill-gray-600 dark:fill-gray-400;
 }

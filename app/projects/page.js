@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Projects from "@/components/Projects";
 
@@ -11,6 +12,7 @@ export default function ProjectsPage() {
         <h1 className="text-3xl font-bold mb-4">Tutti i Progetti</h1>
         <Projects projects={data.projects} />
       </main>
+      <Footer />
     </div>
   );
 }
