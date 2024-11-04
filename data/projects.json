@@ -1,0 +1,39 @@
+{
+  "projects": [
+    {
+      "title": "Cacometro",
+      "description": "Are you really interested?",
+      "image": "/Cacometro.png",
+      "href": "https://cacometro.top",
+      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL"]
+    },
+    {
+      "title": "MajestiCards",
+      "description": "An e-commerce website where users can buy TCG cards.",
+      "image": "/MajestiCards.png",
+      "href": "https://majesticards.com",
+      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL", "Stripe API"]
+    },
+    {
+      "title": "KŌBŌ",
+      "description": "An e-commerce website where users can buy handcrafterd skateboards.",
+      "image": "/Kobo.jpg",
+      "href": "https://kobocraft.xyz",
+      "technologies": ["NextJS", "Tailwind", "Node.js", "MongoDB", "Stripe API"]
+    },
+    {
+      "title": "Portfolio - old",
+      "description": "The first version of my portfolio.",
+      "image": "/Vecchio portfolio.png",
+      "href": "https://mateuszrodz.com/old",
+      "technologies": ["Angular"]
+    },
+    {
+      "title": "GamerSpot",
+      "description": "A website where users can easly see what currently are the most played games. The website allows even to search games per platform and developers.",
+      "image": "/GamerSpot-2.png",
+      "href": "https://github.com/Mate-usz/games-project-ANGULAR-",
+      "technologies": ["Angular"]
+    }
+  ]
+}
