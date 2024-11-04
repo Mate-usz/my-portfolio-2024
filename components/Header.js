@@ -1,11 +1,10 @@
 import Image from "next/image";
-import profilePic from "@/app/images/Buffo.png";
 
 export default function Header() {
   return (
     <header className="flex flex-col md:flex-row-reverse justify-between text-center p-6 ">
       <Image
-        src={profilePic}
+        src="/Buffo.png"
         alt="My photo"
         width={150}
         height={150}
