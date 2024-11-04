@@ -5,30 +5,37 @@ const MATEUSZ_BIRTH_YEAR = 1996;
 
 export default function Header() {
   return (
-    <header className="flex flex-col items-start md:flex-row-reverse md:items-center justify-between text-center p-6 ">
+    <header className="flex flex-col items-start md:flex-row md:items-center justify-between text-center pt-6 md:p-6 ">
       <Image
-        src="/Buffo.png"
+        src="/profile_dark.jpg"
         alt="Mateusz photo"
         width={200}
         height={200}
-        className="rounded-xl "
+        className="hidden dark:block rounded-xl"
       />
-      <div className="flex flex-col items-center md:items-start">
+      <Image
+        src="/profile_pic.jpg"
+        alt="Mateusz photo"
+        width={200}
+        height={200}
+        className="rounded-xl dark:hidden"
+      />
+      <div className="flex flex-col items-center md:items-start md:pl-4">
         <h1 className="text-3xl font-bold mt-4 dark:text-gray-200">
           Hi, I am Mateusz Rodz 👋
         </h1>
-        <p className="mt-4 text-gray-700 dark:text-gray-400">
+        <p className="mt-4 text-left text-gray-700 dark:text-gray-400">
           I am a {new Date().getFullYear() - MATEUSZ_BIRTH_YEAR} years old
           software developer from Italy.
         </p>
         <p className="mt-2 text-left text-gray-700 dark:text-gray-400">
           I like to develop webapps, from time to time I develop some
-          videogames, drink expressos and play chess ♟
+          videogames, drink espresso coffees and play chess ♟
         </p>
         <p className="mt-2 text-sm overline text-left text-gray-700 dark:text-gray-400">
           Oh, and I almost forgot, I make great pizzas every Saturday 🍕
         </p>
-        <div className="flex space-x-4 mt-4">
+        <div className="flex flex-col md:flex-row space-x-4 mt-4">
           {/* Social links */}
           <Socials />
           {/* Download CV*/}
