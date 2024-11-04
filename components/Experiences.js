@@ -39,8 +39,8 @@ export default function Experiences() {
 
   return (
     <section className="p-6">
-      <h2 className="text-2xl font-bold">Esperienze</h2>
-      <div className="mt-4 border rounded-lg p-4">
+      <h2 className="text-2xl font-bold">Experience</h2>
+      <div className="mt-4 border border-gray-600 rounded-lg p-4">
         {experiences.map((exp, index) => (
           <div key={index} className="flex space-x-4 mb-4">
             <img
@@ -54,7 +54,7 @@ export default function Experiences() {
               </p>
               <p className="text-lg font-semibold">{exp.company}</p>
               <p className="text-sm text-gray-500">{exp.role}</p>
-              <ul className="list-disc list-inside text-sm pl-2 text-gray-700">
+              <ul className="list-disc list-inside text-sm pl-2 text-gray-700 dark:text-gray-400">
                 {exp.description.map((task, idx) => (
                   <li key={idx}>{task}</li>
                 ))}

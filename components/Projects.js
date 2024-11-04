@@ -2,16 +2,19 @@ export default function Projects({ projects, viewMore = false }) {
   return (
     <section className="p-6">
       <h2 className="text-2xl font-bold flex justify-between items-center">
-        Progetti
+        Projects
         {viewMore && (
           <a href="/projects" className="text-blue-600 underline">
-            Vedi tutti
+            Show more
           </a>
         )}
       </h2>
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, index) => (
-          <div key={index} className="flex flex-col border rounded-lg p-4">
+          <div
+            key={index}
+            className="flex flex-col border border-gray-600 rounded-lg p-4"
+          >
             <a href={project.href}>
               <img
                 src={project.image}
