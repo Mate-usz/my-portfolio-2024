@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Socials from "./Socials";
 
 export default function Footer() {
@@ -5,9 +6,9 @@ export default function Footer() {
     <footer className="flex flex-col md:flex-row justify-between items-center p-4 space-x-4">
       <p>
         © 2024{" "}
-        <a href="/" className="hover:underline">
+        <Link href="/" className="hover:underline">
           mateuszrodz.com
-        </a>
+        </Link>
       </p>
       <Socials />
     </footer>

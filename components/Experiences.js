@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Experiences() {
   const experiences = [
     {
@@ -43,9 +45,11 @@ export default function Experiences() {
       <div className="mt-4 border border-gray-600 rounded-lg p-4">
         {experiences.map((exp, index) => (
           <div key={index} className="flex space-x-4 mb-4">
-            <img
+            <Image
               src={exp.image}
               alt="Logo Azienda"
+              width={48}
+              height={48}
               className="w-12 h-12 rounded object-contain bg-white dark:bg-transparent"
             />
             <div>

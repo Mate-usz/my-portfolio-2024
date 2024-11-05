@@ -2,6 +2,7 @@
   "projects": [
     {
       "title": "Cacometro",
+      "category": "web",
       "description": "Are you really interested?",
       "image": "/Cacometro.png",
       "href": "https://cacometro.top",
@@ -9,6 +10,7 @@
     },
     {
       "title": "MajestiCards",
+      "category": "web",
       "description": "An e-commerce website where users can buy TCG cards.",
       "image": "/MajestiCards.png",
       "href": "https://majesticards.com",
@@ -16,6 +18,7 @@
     },
     {
       "title": "KŌBŌ",
+      "category": "web",
       "description": "An e-commerce website where users can buy handcrafterd skateboards.",
       "image": "/Kobo.jpg",
       "href": "https://kobocraft.xyz",
@@ -23,13 +26,39 @@
     },
     {
       "title": "Portfolio - old",
+      "category": "web",
       "description": "The first version of my portfolio.",
       "image": "/Vecchio portfolio.png",
       "href": "https://mateuszrodz.com/old",
       "technologies": ["Angular"]
     },
     {
+      "title": "Spacerino",
+      "category": "games",
+      "description": "Will you survive the invasion? A 2D space shooter game made in 2 days.",
+      "image": "/Spacerino.png",
+      "href": "https://m-a-t.itch.io/spacerino",
+      "technologies": ["Unity3D"]
+    },
+    {
+      "title": "Typerino",
+      "category": "games",
+      "description": "A typing game made in 2 days.",
+      "image": "/Typerino.png",
+      "href": "https://m-a-t.itch.io/typerino",
+      "technologies": ["Unity3D"]
+    },
+    {
+      "title": "Truthseeker",
+      "category": "games",
+      "description": "A 3D exploration game made in less then 48 hours.",
+      "image": "/Truthseeker.png",
+      "href": "https://m-a-t.itch.io/truthseeker",
+      "technologies": ["Unity3D"]
+    },
+    {
       "title": "GamerSpot",
+      "category": "web",
       "description": "A website where users can easly see what currently are the most played games. The website allows even to search games per platform and developers.",
       "image": "/GamerSpot-2.png",
       "href": "https://github.com/Mate-usz/games-project-ANGULAR-",
