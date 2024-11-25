@@ -5,8 +5,8 @@
       "category": "web",
       "description": "Are you really interested?",
       "image": "/Cacometro.png",
-      "href": "https://cacometro.top",
-      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL"]
+      "href": "/projects/globe",
+      "technologies": ["ThreeJS", "NextJS", "Tailwind"]
     },
     {
       "title": "MajestiCards",
@@ -14,7 +14,7 @@
       "description": "An e-commerce website where users can buy TCG cards.",
       "image": "/MajestiCards.png",
       "href": "https://majesticards.com",
-      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL", "Stripe API"]
+      "technologies": ["Angular", "CSS", "Node.js", "MySQL", "Stripe API"]
     },
     {
       "title": "KŌBŌ",
@@ -23,6 +23,14 @@
       "image": "/Kobo.jpg",
       "href": "https://kobocraft.xyz",
       "technologies": ["NextJS", "Tailwind", "Node.js", "MongoDB", "Stripe API"]
+    },
+    {
+      "title": "Cacometro",
+      "category": "web",
+      "description": "Are you really interested?",
+      "image": "/Cacometro.png",
+      "href": "https://cacometro.top",
+      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL"]
     },
     {
       "title": "Portfolio - old",

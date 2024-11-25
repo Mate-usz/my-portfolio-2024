@@ -7,9 +7,9 @@ export default function Projects({ projects, viewMore = false }) {
       {viewMore && (
         <h2 className="text-2xl font-bold flex justify-between items-center">
           Projects
-          <a href="/projects" className="text-blue-600 underline">
+          <Link href="/projects" className="text-blue-600 underline">
             Show more
-          </a>
+          </Link>
         </h2>
       )}
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
