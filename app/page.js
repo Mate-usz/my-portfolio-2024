@@ -2,17 +2,17 @@ import ServicesLanding from "@/app/ServicesLanding";
 
 export const metadata = {
   title:
-    "Sviluppo Web, Landing Pages e Servizi per Freelance | Mateusz Developer",
+    "Sviluppatore Web Freelance a Perugia | Landing Page in 48h | Mateusz Rodz",
   description:
-    "Sviluppo landing page performanti, servizi per migliorare la presenza online e soluzioni SaaS su misura. Perfetto per professionisti e piccole aziende.",
+    "Sviluppatore web freelance a Perugia. Creo landing page performanti in 48-72 ore e risolvo bug per freelance e piccole attività in tutta Italia. Preventivo gratuito.",
   keywords: [
-    "sviluppo web",
-    "landing page",
-    "freelance website",
-    "sviluppatore web",
-    "saas developer",
-    "creazione siti web",
-    "programmatore web",
+    "sviluppatore web freelance perugia",
+    "landing page perugia",
+    "sviluppo web perugia",
+    "creazione siti web perugia",
+    "sviluppatore web freelance italia",
+    "landing page nextjs",
+    "programmatore web freelance",
   ],
   openGraph: {
     title: "Servizi Web per Freelance e Piccole Imprese",
@@ -35,11 +35,17 @@ export const metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Mateusz Rodz — Sviluppatore Web Freelance",
+  name: "Mateusz Rodz - Sviluppatore Web Freelance",
   url: "https://mateuszrodz.com",
   description:
     "Sviluppo landing page professionali per freelance e piccole attività in 48-72 ore. Fix bug, ottimizzazione performance e soluzioni web su misura.",
   areaServed: { "@type": "Country", name: "Italy" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Perugia",
+    addressRegion: "Umbria",
+    addressCountry: "IT",
+  },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Servizi Web",

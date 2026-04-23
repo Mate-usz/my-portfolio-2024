@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight, Quote } from "lucide-react";
 
 export default function ServicesLanding() {
   const [formStatus, setFormStatus] = useState("");
@@ -47,6 +48,9 @@ export default function ServicesLanding() {
         >
           Prenota una call gratuita
         </a>
+        <p className="mt-6 text-sm text-neutral-600">
+          Perugia, Italia - lavoro da remoto in tutta Italia
+        </p>
       </motion.section>
 
       {/* TRUST BAR */}
@@ -66,29 +70,53 @@ export default function ServicesLanding() {
             alt="Be Shaping the Future"
             width={120}
             height={32}
-            className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
+            className="h-10 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
           />
           <Image
             src="/blue-reply.png"
             alt="Blue Reply"
             width={120}
             height={32}
-            className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
+            className="h-10 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
           />
           <Image
             src="/LT_white.png"
             alt="Lipari Technology"
             width={120}
             height={32}
-            className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
+            className="h-10 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
           />
         </div>
         <a
           href="/portfolio"
           className="inline-block mt-8 text-sm text-neutral-500 hover:text-neutral-300 transition"
         >
-          Scopri il mio percorso →
+          Scopri il mio percorso <ArrowRight className="w-4 h-4 inline ml-1" />
         </a>
+      </motion.section>
+
+      {/* NUMERI */}
+      <motion.section
+        className="max-w-3xl mx-auto px-6 pb-20"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="grid grid-cols-3 divide-x divide-neutral-800 border border-neutral-800 rounded-2xl overflow-hidden">
+          {[
+            { value: "6+", label: "anni di esperienza" },
+            { value: "10+", label: "progetti consegnati" },
+            { value: "48h", label: "consegna media" },
+          ].map(({ value, label }) => (
+            <div key={label} className="py-8 text-center">
+              <p className="text-3xl font-bold text-white mb-1">{value}</p>
+              <p className="text-xs text-neutral-500 uppercase tracking-widest">
+                {label}
+              </p>
+            </div>
+          ))}
+        </div>
       </motion.section>
 
       {/* PROGETTI */}
@@ -219,7 +247,7 @@ export default function ServicesLanding() {
               href="#contatti"
               className="text-blue-500 hover:underline font-semibold"
             >
-              Richiedi un fix veloce →
+              Richiedi un fix veloce <ArrowRight className="w-4 h-4 inline ml-1" />
             </a>
           </motion.div>
 
@@ -249,7 +277,7 @@ export default function ServicesLanding() {
               href="#contatti"
               className="text-blue-500 hover:underline font-semibold"
             >
-              Prenota la tua landing →
+              Prenota la tua landing <ArrowRight className="w-4 h-4 inline ml-1" />
             </a>
           </motion.div>
         </div>
@@ -299,6 +327,63 @@ export default function ServicesLanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* TESTIMONIANZE */}
+      <motion.section
+        className="max-w-5xl mx-auto px-6 py-20"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <p className="text-xs text-neutral-500 uppercase tracking-widest text-center mb-10">
+          Cosa dicono i clienti
+        </p>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            {
+              text: "Mateusz ha contribuito in modo fondamentale al nostro progetto consentendoci di risolvere le problematiche e apportare significativi miglioramenti. Si è sempre dimostrato disponibile e proattivo, la comunicazione veloce e altrettanto la reattività. La sua esperienza è stata preziosa.",
+              author: "Giacomo",
+              platform: "Addlance",
+            },
+            {
+              text: "Molto professionale, si impegna con grande dedizione al progetto affidatogli, cercando soluzioni tecniche ma anche creative ai vari problemi operativi. Le sue capacità di web developer ci hanno aiutato a sviluppare un progetto il cui sviluppo era pieno di insidie. Dal punto di vista umano è stato cordiale, entusiasta e ha tenuto un atteggiamento positivo durante tutta la collaborazione.",
+              author: "Massimo",
+              platform: "Addlance",
+            },
+          ].map(({ text, author, platform }) => (
+            <div
+              key={author}
+              className="bg-neutral-900 border border-neutral-800 rounded-2xl p-8 flex flex-col justify-between"
+            >
+              <div>
+                <Quote className="w-7 h-7 text-blue-500" />
+                <p className="text-neutral-300 leading-relaxed mt-2 text-sm">
+                  {text}
+                </p>
+              </div>
+              <div className="flex items-center justify-between mt-6">
+                <div>
+                  <p className="font-semibold text-white">{author}</p>
+                  <p className="text-xs text-neutral-500">{platform}</p>
+                </div>
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      className="w-4 h-4 text-amber-400"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.section>
 
       {/* FAQ */}
       <motion.section

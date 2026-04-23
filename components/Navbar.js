@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -30,7 +31,7 @@ export default function Navbar() {
         {theme === "dark" ? "Light Mode" : "Dark Mode"}
       </button>
       <div className="space-x-2 md:space-x-4">
-        <Link href="/" className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition">← Services</Link>
+        <Link href="/" className="inline-flex items-center gap-1 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition"><ArrowLeft className="w-4 h-4" /> Services</Link>
         <Link href="/portfolio">Home</Link>
         <Link href="/projects">Projects</Link>
         <Link href="/contact">Contact me</Link>
