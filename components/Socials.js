@@ -6,8 +6,7 @@ export default function Socials() {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="30"
-          height="30"
+          className="w-6 h-6"
           viewBox="0 0 30 30"
         >
           <path
@@ -21,8 +20,7 @@ export default function Socials() {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="30"
-          height="30"
+          className="w-6 h-6"
           viewBox="0 0 48 48"
         >
           <path
@@ -39,8 +37,7 @@ export default function Socials() {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="30"
-          height="30"
+          className="w-6 h-6"
           viewBox="0 0 50 50"
         >
           <path
@@ -54,8 +51,7 @@ export default function Socials() {
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
           y="0px"
-          width="30"
-          height="30"
+          className="w-6 h-6"
           viewBox="0 0 50 50"
         >
           <path

@@ -17,13 +17,16 @@ const astonpoliz = localFont({
 });
 
 export const metadata = {
-  title: "Mateusz Rodz",
-  description: "My portfolio",
+  title: {
+    default: "Mateusz Rodz",
+    template: "%s | Mateusz Rodz",
+  },
+  description: "Sviluppo web e soluzioni digitali.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="it">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${astonpoliz.variable} antialiased`}
       >

@@ -30,7 +30,8 @@ export default function Navbar() {
         {theme === "dark" ? "Light Mode" : "Dark Mode"}
       </button>
       <div className="space-x-2 md:space-x-4">
-        <Link href="/">Home</Link>
+        <Link href="/" className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition">← Services</Link>
+        <Link href="/portfolio">Home</Link>
         <Link href="/projects">Projects</Link>
         <Link href="/contact">Contact me</Link>
       </div>

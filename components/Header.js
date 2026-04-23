@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Socials from "./Socials";
 
-const MATEUSZ_BIRTH_YEAR = 1996;
+const MATEUSZ_BIRTHDAY = new Date(1996, 5, 1); // June 1, 1996
+
+function calculateAge() {
+  const today = new Date();
+  let age = today.getFullYear() - MATEUSZ_BIRTHDAY.getFullYear();
+  const m = today.getMonth() - MATEUSZ_BIRTHDAY.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < MATEUSZ_BIRTHDAY.getDate())) age--;
+  return age;
+}
 
 export default function Header() {
   return (
@@ -25,7 +33,7 @@ export default function Header() {
           Hi, I am Mateusz Rodz 👋
         </h1>
         <p className="mt-4 text-left text-gray-700 dark:text-gray-400">
-          I am a {new Date().getFullYear() - MATEUSZ_BIRTH_YEAR} years old
+          I am a {calculateAge()} years old
           software developer from Italy.
         </p>
         <p className="mt-2 text-left text-gray-700 dark:text-gray-400">
