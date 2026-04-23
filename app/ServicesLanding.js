@@ -61,11 +61,32 @@ export default function ServicesLanding() {
           Esperienza maturata in aziende enterprise
         </p>
         <div className="flex justify-center items-center gap-10 flex-wrap">
-          <Image src="/BE_logo.png" alt="Be Shaping the Future" width={120} height={32} className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition" />
-          <Image src="/blue-reply.png" alt="Blue Reply" width={120} height={32} className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition" />
-          <Image src="/LT_white.png" alt="Lipari Technology" width={120} height={32} className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition" />
+          <Image
+            src="/BE_logo.png"
+            alt="Be Shaping the Future"
+            width={120}
+            height={32}
+            className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
+          />
+          <Image
+            src="/blue-reply.png"
+            alt="Blue Reply"
+            width={120}
+            height={32}
+            className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
+          />
+          <Image
+            src="/LT_white.png"
+            alt="Lipari Technology"
+            width={120}
+            height={32}
+            className="h-8 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
+          />
         </div>
-        <a href="/portfolio" className="inline-block mt-8 text-sm text-neutral-500 hover:text-neutral-300 transition">
+        <a
+          href="/portfolio"
+          className="inline-block mt-8 text-sm text-neutral-500 hover:text-neutral-300 transition"
+        >
           Scopri il mio percorso →
         </a>
       </motion.section>
@@ -81,37 +102,55 @@ export default function ServicesLanding() {
         <p className="text-xs text-neutral-500 uppercase tracking-widest text-center mb-10">
           Alcuni progetti realizzati
         </p>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {[
             {
               title: "MajestiCards",
-              description: "E-commerce completo per la vendita di carte da gioco con pagamenti Stripe e gestione inventario.",
+              description:
+                "E-commerce completo per la vendita di carte da gioco con pagamenti Stripe e gestione inventario.",
               image: "/MajestiCards.png",
               href: "https://majesticards.com",
               tech: ["Next.js", "Stripe", "MySQL"],
             },
             {
               title: "KŌBŌ",
-              description: "Shop online per skateboard artigianali con carrello, checkout e pagamenti integrati.",
+              description:
+                "Shop online per skateboard artigianali con carrello, checkout e pagamenti integrati.",
               image: "/Kobo.jpg",
               href: "https://kobocraft.xyz",
               tech: ["Next.js", "MongoDB", "Stripe"],
             },
             {
-              title: "Cacometro",
-              description: "Applicazione web full-stack con backend custom, database relazionale e interfaccia moderna.",
-              image: "/Cacometro.png",
-              href: "https://cacometro.top",
-              tech: ["Next.js", "Node.js", "MySQL"],
+              title: "Alphacut",
+              description:
+                "Tool SaaS per rimuovere sfondi solidi dalle immagini in un click. Veloce, pulito e ottimizzato per il web.",
+              image: "/alphacut.png",
+              href: "https://alphacut.pics",
+              tech: ["Next.js", "Tailwind"],
+              wip: false,
             },
-          ].map(({ title, description, image, href, tech }) => (
+            {
+              title: "heyhuby",
+              description:
+                "Nuovo prodotto digitale per una startup, sviluppato in collaborazione con So-Synergy.",
+              image: "/heyhuby.png",
+              href: "https://heyhuby.com",
+              tech: ["Next.js", "Tailwind"],
+              wip: true,
+            },
+          ].map(({ title, description, image, href, tech, wip }) => (
             <a
               key={title}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-neutral-600 transition-colors"
+              className="group relative bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-neutral-600 transition-colors"
             >
+              {wip && (
+                <span className="absolute top-3 right-3 z-10 text-xs px-2 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                  In sviluppo
+                </span>
+              )}
               <div className="relative h-44 overflow-hidden">
                 <Image
                   src={image}
@@ -122,10 +161,15 @@ export default function ServicesLanding() {
               </div>
               <div className="p-5">
                 <h3 className="font-bold text-lg mb-2">{title}</h3>
-                <p className="text-neutral-400 text-sm mb-4 leading-relaxed">{description}</p>
+                <p className="text-neutral-400 text-sm mb-4 leading-relaxed">
+                  {description}
+                </p>
                 <div className="flex flex-wrap gap-2">
                   {tech.map((t) => (
-                    <span key={t} className="text-xs bg-neutral-800 text-neutral-400 px-2 py-1 rounded-full">
+                    <span
+                      key={t}
+                      className="text-xs bg-neutral-800 text-neutral-400 px-2 py-1 rounded-full"
+                    >
                       {t}
                     </span>
                   ))}

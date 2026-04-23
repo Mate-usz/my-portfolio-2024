@@ -1,12 +1,20 @@
 {
   "projects": [
     {
-      "title": "Cacometro",
+      "title": "Alphacuts",
       "category": "web",
-      "description": "Are you really interested?",
-      "image": "/Cacometro.png",
-      "href": "https://cacometro.top",
-      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL"]
+      "description": "SaaS tool to remove solid backgrounds from images instantly. Fast, clean and optimized for the web.",
+      "image": "/alphacuts.png",
+      "href": "https://alphacut.pics",
+      "technologies": ["Next.js", "Tailwind"]
+    },
+    {
+      "title": "heyhuby",
+      "category": "web",
+      "description": "New digital product for a startup, built in collaboration with So-Synergy. Currently in active development.",
+      "image": "/heyhuby.png",
+      "href": "https://heyhuby.com",
+      "technologies": ["Next.js", "Tailwind"]
     },
     {
       "title": "MajestiCards",
@@ -19,10 +27,18 @@
     {
       "title": "KŌBŌ",
       "category": "web",
-      "description": "An e-commerce website where users can buy handcrafterd skateboards.",
+      "description": "An e-commerce website where users can buy handcrafted skateboards.",
       "image": "/Kobo.jpg",
       "href": "https://kobocraft.xyz",
       "technologies": ["NextJS", "Tailwind", "Node.js", "MongoDB", "Stripe API"]
+    },
+    {
+      "title": "Cacometro",
+      "category": "web",
+      "description": "Web application with custom backend, relational database and modern interface.",
+      "image": "/Cacometro.png",
+      "href": "https://cacometro.website",
+      "technologies": ["NextJS", "Tailwind", "Node.js", "MySQL"]
     },
     {
       "title": "Portfolio - old",
@@ -51,7 +67,7 @@
     {
       "title": "Truthseeker",
       "category": "games",
-      "description": "A 3D exploration game made in less then 48 hours.",
+      "description": "A 3D exploration game made in less than 48 hours.",
       "image": "/Truthseeker.png",
       "href": "https://m-a-t.itch.io/truthseeker",
       "technologies": ["Unity3D"]
@@ -59,7 +75,7 @@
     {
       "title": "GamerSpot",
       "category": "web",
-      "description": "A website where users can easly see what currently are the most played games. The website allows even to search games per platform and developers.",
+      "description": "A website where users can easily see what are currently the most played games, with search by platform and developer.",
       "image": "/GamerSpot-2.png",
       "href": "https://github.com/Mate-usz/games-project-ANGULAR-",
       "technologies": ["Angular"]
