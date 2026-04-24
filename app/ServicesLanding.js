@@ -545,6 +545,12 @@ export default function ServicesLanding({
           <p className="mt-6 text-center text-neutral-300">{formStatus}</p>
         )}
       </motion.section>
+      {/* FOOTER */}
+      <footer className="max-w-5xl mx-auto px-6 pb-10 pt-4 flex justify-center gap-6 text-xs text-neutral-600 border-t border-neutral-900">
+        <span>© {new Date().getFullYear()} Mateusz Rodz</span>
+        <a href="/privacy" className="hover:text-neutral-400 transition">Privacy Policy</a>
+      </footer>
+
       {/* WHATSAPP STICKY */}
       <a
         href={`https://wa.me/393483749656?text=${encodeURIComponent(whatsappMessage)}`}
