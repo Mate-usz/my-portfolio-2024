@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="flex flex-col md:flex-row justify-between items-center p-4 space-x-4">
       <p>
-        © 2024{" "}
+        &copy; {new Date().getFullYear()}{" "}
         <Link href="/" className="hover:underline">
           mateuszrodz.com
         </Link>

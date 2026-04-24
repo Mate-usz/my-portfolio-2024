@@ -1,19 +1,46 @@
 import Image from "next/image";
 import Socials from "./Socials";
 
-const MATEUSZ_BIRTHDAY = new Date(1996, 5, 1); // June 1, 1996
+const CAREER_START = new Date(2019, 8, 1); // Sep 2019
 
-function calculateAge() {
+function calculateYearsOfExperience() {
   const today = new Date();
-  let age = today.getFullYear() - MATEUSZ_BIRTHDAY.getFullYear();
-  const m = today.getMonth() - MATEUSZ_BIRTHDAY.getMonth();
-  if (m < 0 || (m === 0 && today.getDate() < MATEUSZ_BIRTHDAY.getDate())) age--;
-  return age;
+  let years = today.getFullYear() - CAREER_START.getFullYear();
+  const m = today.getMonth() - CAREER_START.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < CAREER_START.getDate())) years--;
+  return years;
 }
 
-export default function Header() {
+const t = {
+  en: {
+    greeting: "Hi, I'm Mateusz Rodz 👋",
+    intro: (exp) =>
+      `Web developer with ${exp}+ years of experience, based in Italy.`,
+    body: "I've worked at enterprise companies, built e-commerce stores, SaaS tools and digital products. Now I work independently, directly with clients who have a project to build.",
+    personal:
+      "I enjoy building web apps, occasionally make videogames, drink lots of espresso and play chess ♟",
+    pizza: "Oh, and I almost forgot — great pizzas every Saturday 🍕",
+    cv: "Download CV",
+  },
+  it: {
+    greeting: "Ciao, sono Mateusz Rodz 👋",
+    intro: (exp) =>
+      `Sviluppatore web con ${exp}+ anni di esperienza, basato in Italia.`,
+    body: "Ho lavorato in aziende enterprise, costruito e-commerce, SaaS e prodotti digitali. Ora lavoro in proprio, direttamente con chi ha un progetto da realizzare.",
+    personal:
+      "Mi piace sviluppare webapp, ogni tanto creo videogiochi, bevo tanti caffe e gioco a scacchi ♟",
+    pizza:
+      "Ah, quasi dimenticavo: faccio delle buonissime pizze ogni sabato 🍕",
+    cv: "Scarica il CV",
+  },
+};
+
+export default function Header({ locale = "en" }) {
+  const exp = calculateYearsOfExperience();
+  const s = t[locale];
+
   return (
-    <header className="flex flex-col items-start md:flex-row md:items-center justify-between text-center pt-6 md:p-6 ">
+    <header className="flex flex-col items-start md:flex-row md:items-center justify-between text-center pt-6 md:p-6">
       <Image
         src="/profile_dark.jpg"
         alt="Mateusz photo"
@@ -30,29 +57,28 @@ export default function Header() {
       />
       <div className="flex flex-col items-center md:items-start md:pl-4">
         <h1 className="text-3xl font-bold mt-4 dark:text-gray-200">
-          Hi, I am Mateusz Rodz 👋
+          {s.greeting}
         </h1>
         <p className="mt-4 text-left text-gray-700 dark:text-gray-400">
-          I am a {calculateAge()} years old
-          software developer from Italy.
+          {s.intro(exp)}
         </p>
         <p className="mt-2 text-left text-gray-700 dark:text-gray-400">
-          I like to develop webapps, from time to time I develop some
-          videogames, drink espresso coffees and play chess ♟
+          {s.body}
+        </p>
+        <p className="mt-2 text-left text-gray-700 dark:text-gray-400">
+          {s.personal}
         </p>
         <p className="mt-2 text-sm overline text-left text-gray-700 dark:text-gray-400">
-          Oh, and I almost forgot, I make great pizzas every Saturday 🍕
+          {s.pizza}
         </p>
         <div className="flex flex-col md:flex-row space-x-4 mt-4">
-          {/* Social links */}
           <Socials />
-          {/* Download CV*/}
           <a
             href="/Mateusz_Rodz_resume_eng.pdf"
             download
-            className="mt-4 border border-green-400 bg-transparent opacity-80 hover:opacity-100 hover:bg-green-500  px-4 py-2 rounded transition-all ease-in-out"
+            className="mt-4 border border-green-400 bg-transparent opacity-80 hover:opacity-100 hover:bg-green-500 px-4 py-2 rounded transition-all ease-in-out"
           >
-            Download CV
+            {s.cv}
           </a>
         </div>
       </div>

@@ -1,14 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Projects({ projects, viewMore = false }) {
+const t = {
+  en: { title: "Projects", showMore: "Show more" },
+  it: { title: "Progetti", showMore: "Vedi tutti" },
+};
+
+export default function Projects({ projects, viewMore = false, locale = "en" }) {
+  const s = t[locale];
+
   return (
     <section className="p-6">
       {viewMore && (
         <h2 className="text-2xl font-bold flex justify-between items-center">
-          Projects
-          <a href="/projects" className="text-blue-600 underline">
-            Show more
+          {s.title}
+          <a href="/projects" className="text-blue-600 underline text-base font-normal">
+            {s.showMore}
           </a>
         </h2>
       )}

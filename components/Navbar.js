@@ -3,8 +3,14 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function Navbar() {
+const t = {
+  en: { services: "Services", home: "Home", projects: "Projects", contact: "Contact me", light: "Light Mode", dark: "Dark Mode" },
+  it: { services: "Servizi", home: "Home", projects: "Progetti", contact: "Contattami", light: "Tema Chiaro", dark: "Tema Scuro" },
+};
+
+export default function Navbar({ locale = "en" }) {
   const [theme, setTheme] = useState("light");
+  const s = t[locale];
 
   const toggleTheme = () => {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -28,13 +34,13 @@ export default function Navbar() {
         onClick={toggleTheme}
         className="bg-gray-700 dark:bg-gray-200 text-gray-200 dark:text-gray-700 px-2 md:px-4 md:py-2 rounded"
       >
-        {theme === "dark" ? "Light Mode" : "Dark Mode"}
+        {theme === "dark" ? s.light : s.dark}
       </button>
       <div className="space-x-2 md:space-x-4">
-        <Link href="/" className="inline-flex items-center gap-1 text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition"><ArrowLeft className="w-4 h-4" /> Services</Link>
-        <Link href="/portfolio">Home</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/contact">Contact me</Link>
+        <Link href="/" className="text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition"><ArrowLeft className="w-4 h-4 inline mr-1" />{s.services}</Link>
+        <Link href="/portfolio">{s.home}</Link>
+        <Link href="/projects">{s.projects}</Link>
+        <Link href="/contact">{s.contact}</Link>
       </div>
     </nav>
   );
