@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Privacy Policy | Mateusz Rodz",
   description:
@@ -43,12 +45,10 @@ export default function PrivacyPage() {
             <ul className="list-disc list-inside mt-2 space-y-1 text-neutral-400">
               <li>Nome</li>
               <li>Indirizzo email</li>
-              <li>Messaggio libero inserito dall'utente</li>
+              <li>{"Messaggio libero inserito dall'utente"}</li>
             </ul>
             <p className="mt-3">
-              Non vengono raccolti dati di navigazione, cookie di profilazione o
-              dati sensibili. Le statistiche di visita, se presenti, sono
-              anonimizzate e non consentono l'identificazione degli utenti.
+              {"Non vengono raccolti dati di navigazione, cookie di profilazione o dati sensibili. Le statistiche di visita, se presenti, sono anonimizzate e non consentono l'identificazione degli utenti."}
             </p>
           </div>
 
@@ -57,12 +57,7 @@ export default function PrivacyPage() {
               3. Finalità e base giuridica
             </h2>
             <p>
-              I dati raccolti sono trattati per rispondere alle richieste di
-              contatto o preventivo inviate dall'utente. La base giuridica del
-              trattamento è il legittimo interesse del titolare (art. 6, par. 1,
-              lett. f, GDPR) nella gestione delle comunicazioni commerciali
-              precontrattuali, nonché il consenso espresso dall'utente al
-              momento dell'invio del modulo (art. 6, par. 1, lett. a, GDPR).
+              {"I dati raccolti sono trattati per rispondere alle richieste di contatto o preventivo inviate dall'utente. La base giuridica del trattamento è il legittimo interesse del titolare (art. 6, par. 1, lett. f, GDPR) nella gestione delle comunicazioni commerciali precontrattuali, nonché il consenso espresso dall'utente al momento dell'invio del modulo (art. 6, par. 1, lett. a, GDPR)."}
             </p>
           </div>
 
@@ -85,10 +80,10 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="text-xl font-semibold text-white mb-3">
-              5. Diritti dell'interessato
+              {"5. Diritti dell'interessato"}
             </h2>
             <p>
-              Ai sensi degli artt. 15–22 del GDPR, l'utente ha il diritto di:
+              {"Ai sensi degli artt. 15-22 del GDPR, l'utente ha il diritto di:"}
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1 text-neutral-400">
               <li>Accedere ai propri dati personali</li>
@@ -115,8 +110,7 @@ export default function PrivacyPage() {
               6. Reclami
             </h2>
             <p>
-              L'utente ha il diritto di proporre reclamo al Garante per la
-              Protezione dei Dati Personali (
+              {"L'utente ha il diritto di proporre reclamo al Garante per la Protezione dei Dati Personali ("}
               <a
                 href="https://www.garanteprivacy.it"
                 target="_blank"
@@ -125,7 +119,7 @@ export default function PrivacyPage() {
               >
                 www.garanteprivacy.it
               </a>
-              ) qualora ritenga che il trattamento violi la normativa vigente.
+              {") qualora ritenga che il trattamento violi la normativa vigente."}
             </p>
           </div>
 
@@ -142,9 +136,9 @@ export default function PrivacyPage() {
         </section>
 
         <div className="mt-16 pt-8 border-t border-neutral-800">
-          <a href="/" className="text-blue-400 hover:underline text-sm">
+          <Link href="/" className="text-blue-400 hover:underline text-sm">
             &lt;- Torna alla home
-          </a>
+          </Link>
         </div>
       </main>
     </div>

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Quote } from "lucide-react";
 
 export default function ServicesLanding({
@@ -123,13 +124,13 @@ export default function ServicesLanding({
             className="h-10 w-auto brightness-0 invert opacity-50 hover:opacity-80 transition"
           />
         </div>
-        <a
+        <Link
           href="/portfolio"
           data-umami-event="portfolio-click"
           className="inline-block mt-8 text-sm text-neutral-500 hover:text-neutral-300 transition"
         >
           Scopri il mio percorso <ArrowRight className="w-4 h-4 inline ml-1" />
-        </a>
+        </Link>
       </motion.section>
 
       {/* NUMERI */}
@@ -582,7 +583,7 @@ export default function ServicesLanding({
       {/* FOOTER */}
       <footer className="max-w-5xl mx-auto px-6 pb-10 pt-4 flex justify-center gap-6 text-xs text-neutral-600 border-t border-neutral-900">
         <span>© {new Date().getFullYear()} Mateusz Rodz</span>
-        <a href="/privacy" className="hover:text-neutral-400 transition">Privacy Policy</a>
+        <Link href="/privacy" className="hover:text-neutral-400 transition">Privacy Policy</Link>
       </footer>
 
       {/* WHATSAPP STICKY */}

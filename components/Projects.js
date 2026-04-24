@@ -14,9 +14,9 @@ export default function Projects({ projects, viewMore = false, locale = "en" }) 
       {viewMore && (
         <h2 className="text-2xl font-bold flex justify-between items-center">
           {s.title}
-          <a href="/projects" className="text-blue-600 underline text-base font-normal">
+          <Link href="/projects" className="text-blue-600 underline text-base font-normal">
             {s.showMore}
-          </a>
+          </Link>
         </h2>
       )}
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
