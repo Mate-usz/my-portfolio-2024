@@ -31,7 +31,7 @@ export default function Socials() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+          className="inline-flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:scale-110 transition-all duration-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -17,7 +17,7 @@ export default async function Portfolio() {
       <Navbar locale={locale} />
       <Header locale={locale} />
       <Experiences locale={locale} />
-      <Projects projects={data.projects.slice(0, 2)} viewMore={true} locale={locale} />
+      <Projects projects={data.projects.slice(0, 4)} viewMore={true} locale={locale} />
       <Footer />
     </div>
   );

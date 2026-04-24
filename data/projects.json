@@ -1,20 +1,12 @@
 {
   "projects": [
     {
-      "title": "Alphacut",
+      "title": "RSV Motori",
       "category": "web",
-      "description": "SaaS tool to remove solid backgrounds from images instantly. Fast, clean and optimized for the web.",
-      "image": "/alphacut.png",
-      "href": "https://alphacut.pics",
-      "technologies": ["Next.js", "Tailwind"]
-    },
-    {
-      "title": "heyhuby",
-      "category": "web",
-      "description": "New digital product for a startup, built in collaboration with So-Synergy. Currently in active development.",
-      "image": "/heyhuby.png",
-      "href": "https://heyhuby.com",
-      "technologies": ["Next.js", "Tailwind"]
+      "description": "E-commerce on Shopify for an Italian company selling, servicing and supplying parts for construction machinery. Product catalogue, tech sheets and payment integration.",
+      "image": "/rsvmotori.png",
+      "href": "https://rsvmotorisrl.it",
+      "technologies": ["Shopify"]
     },
     {
       "title": "MajestiCards",
@@ -31,6 +23,22 @@
       "image": "/Kobo.jpg",
       "href": "https://kobocraft.xyz",
       "technologies": ["NextJS", "Tailwind", "Node.js", "MongoDB", "Stripe API"]
+    },
+    {
+      "title": "Alphacut",
+      "category": "web",
+      "description": "SaaS tool to remove solid backgrounds from images instantly. Fast, clean and optimized for the web.",
+      "image": "/alphacut.png",
+      "href": "https://alphacut.pics",
+      "technologies": ["Next.js", "Tailwind"]
+    },
+    {
+      "title": "heyhuby",
+      "category": "web",
+      "description": "New digital product for a startup, built in collaboration with So-Synergy. Currently in active development.",
+      "image": "/heyhuby.png",
+      "href": "https://heyhuby.com",
+      "technologies": ["Next.js", "Tailwind"]
     },
     {
       "title": "Cacometro",
