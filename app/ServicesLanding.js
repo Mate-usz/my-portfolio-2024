@@ -8,6 +8,7 @@ import { ArrowRight, Quote } from "lucide-react";
 export default function ServicesLanding({
   headline = "Il tuo sito non porta clienti?",
   subheading = "Creo landing page che trasformano visitatori in contatti, pronte in 48 ore. Niente agenzie, niente attese. Parli direttamente con me.",
+  whatsappMessage = "Ciao Mateusz, vorrei informazioni sui tuoi servizi",
 }) {
   const [formStatus, setFormStatus] = useState("");
 
@@ -36,12 +37,15 @@ export default function ServicesLanding({
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto px-6 py-24 text-center"
+        className="relative max-w-5xl mx-auto px-6 py-24 text-center"
       >
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 font-sans">
+        {/* Glow blob behind title */}
+        <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-2/3 w-[700px] h-[320px] rounded-full bg-blue-600/25 blur-[120px]" />
+
+        <h1 className="relative text-4xl md:text-6xl font-bold mb-6 font-sans bg-gradient-to-b from-white to-neutral-400 bg-clip-text text-transparent">
           {headline}
         </h1>
-        <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-10">
+        <p className="relative text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-10">
           {subheading}
         </p>
         <a
@@ -151,12 +155,12 @@ export default function ServicesLanding({
               tech: ["Next.js", "MongoDB", "Stripe"],
             },
             {
-              title: "Alphacut",
+              title: "RSV Motori",
               description:
-                "Tool SaaS per rimuovere sfondi solidi dalle immagini in un click. Veloce, pulito e ottimizzato per il web.",
-              image: "/alphacut.png",
-              href: "https://alphacut.pics",
-              tech: ["Next.js", "Tailwind"],
+                "E-commerce su Shopify per un'azienda di vendita, assistenza e ricambi di macchine edili in Calabria. Catalogo prodotti, schede tecniche e integrazione pagamenti.",
+              image: "/rsvmotori.png",
+              href: "https://rsvmotorisrl.it",
+              tech: ["Shopify"],
               wip: false,
             },
             {
@@ -223,14 +227,14 @@ export default function ServicesLanding({
           Servizi Disponibili
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* SERVIZIO A */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl"
+            className="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl flex flex-col"
           >
             <h3 className="text-2xl font-bold mb-4 font-sans">
               Web Fix & Boost
@@ -239,7 +243,7 @@ export default function ServicesLanding({
               Risolvo bug, miglioro la velocità del sito e ottimizzo UX/UI.
               Intervento rapido entro 24-48 ore con report finale.
             </p>
-            <ul className="space-y-2 text-neutral-400 mb-6">
+            <ul className="space-y-2 text-neutral-400 mb-6 flex-1">
               <li>• Correzione bug (JS, CSS, layout, form)</li>
               <li>• Ottimizzazione performance (Lighthouse)</li>
               <li>• Migliorie UX/UI</li>
@@ -249,17 +253,18 @@ export default function ServicesLanding({
               href="#contatti"
               className="text-blue-500 hover:underline font-semibold"
             >
-              Richiedi un fix veloce <ArrowRight className="w-4 h-4 inline ml-1" />
+              Richiedi un fix veloce{" "}
+              <ArrowRight className="w-4 h-4 inline ml-1" />
             </a>
           </motion.div>
 
-          {/* SERVIZIO C */}
+          {/* SERVIZIO B */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl"
+            className="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl flex flex-col"
           >
             <h3 className="text-2xl font-bold mb-4 font-sans">
               Landing Page in 48-72h
@@ -269,7 +274,7 @@ export default function ServicesLanding({
               Tailwind. Perfette per freelance, attività locali e lanci
               prodotto.
             </p>
-            <ul className="space-y-2 text-neutral-400 mb-6">
+            <ul className="space-y-2 text-neutral-400 mb-6 flex-1">
               <li>• Design pulito e professionale</li>
               <li>• Next.js + Tailwind</li>
               <li>• Testi e struttura ottimizzati</li>
@@ -279,7 +284,45 @@ export default function ServicesLanding({
               href="#contatti"
               className="text-blue-500 hover:underline font-semibold"
             >
-              Prenota la tua landing <ArrowRight className="w-4 h-4 inline ml-1" />
+              Prenota la tua landing{" "}
+              <ArrowRight className="w-4 h-4 inline ml-1" />
+            </a>
+          </motion.div>
+
+          {/* SERVIZIO C - PREMIUM */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="relative bg-neutral-900 p-8 rounded-2xl border border-blue-500/50 shadow-xl shadow-blue-900/20 flex flex-col"
+          >
+            <span className="absolute -top-3 left-6 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+              Per attività locali
+            </span>
+            <h3 className="text-2xl font-bold mb-4 font-sans">
+              Landing + Prenotazioni
+            </h3>
+            <p className="text-neutral-300 mb-6">
+              Landing page professionale con sistema di prenotazione integrato.
+              I clienti prenotano direttamente dal sito, tu ricevi tutto via
+              email.
+            </p>
+            <ul className="space-y-2 text-neutral-400 mb-6 flex-1">
+              <li>• Tutto della Landing Page base</li>
+              <li>
+                • Integrazione con il tuo sistema di prenotazione (Calendly,
+                widget esterno, o link diretto)
+              </li>
+              <li>• Notifiche email per nuove richieste o prenotazioni</li>
+            </ul>
+            <p className="text-white font-semibold mb-4">Da €500 a €700</p>
+            <a
+              href="#contatti"
+              className="text-blue-400 hover:underline font-semibold"
+            >
+              Richiedi un preventivo{" "}
+              <ArrowRight className="w-4 h-4 inline ml-1" />
             </a>
           </motion.div>
         </div>
@@ -402,11 +445,11 @@ export default function ServicesLanding({
           {[
             {
               q: "Quanto costa creare una landing page?",
-              a: "Da €300 a €450 tutto incluso: design, sviluppo, testi ottimizzati e deploy. Il prezzo esatto dipende dalla complessità della pagina.",
+              a: "Da €300 tutto incluso: design, sviluppo, testi ottimizzati e deploy. Il prezzo esatto dipende dalla complessità della pagina.",
             },
             {
               q: "In quanto tempo viene consegnata?",
-              a: "48–72 ore dalla conferma del progetto e ricezione dei materiali. Per i fix tecnici, 24–48 ore.",
+              a: "48-72 ore dalla conferma del progetto e ricezione dei materiali. Per i fix tecnici, 24-48 ore.",
             },
             {
               q: "Cosa mi serve per iniziare?",
@@ -417,8 +460,8 @@ export default function ServicesLanding({
               a: "Sì, includo una sessione di revisioni nel prezzo. Modifiche successive rientrano nel servizio Web Fix & Boost.",
             },
             {
-              q: "Lavori solo con Next.js o anche con WordPress?",
-              a: "Principalmente Next.js e React, che garantiscono performance e velocità superiori. Posso valutare WordPress su richiesta.",
+              q: "Lavori solo con Next.js o anche altro?",
+              a: "Principalmente Next.js e React, che garantiscono performance e velocità superiori. Posso valutare WordPress o altre piattaforme su richiesta.",
             },
             {
               q: "Lavori con clienti in tutta Italia?",
@@ -430,7 +473,7 @@ export default function ServicesLanding({
             },
             {
               q: "Come funziona il pagamento?",
-              a: "50% all'avvio del progetto, 50% alla consegna. Accetto bonifico bancario e PayPal.",
+              a: "50% all'avvio del progetto, 50% alla consegna.",
             },
             {
               q: "Garantisci nuovi clienti dopo la consegna?",
@@ -504,7 +547,7 @@ export default function ServicesLanding({
       </motion.section>
       {/* WHATSAPP STICKY */}
       <a
-        href="https://wa.me/393483749656?text=Ciao%20Mateusz%2C%20vorrei%20informazioni%20sui%20tuoi%20servizi"
+        href={`https://wa.me/393483749656?text=${encodeURIComponent(whatsappMessage)}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contattami su WhatsApp"

@@ -70,6 +70,16 @@ const jsonLd = {
           priceCurrency: "EUR",
         },
       },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Landing Page + Prenotazioni" },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          minPrice: 500,
+          maxPrice: 700,
+          priceCurrency: "EUR",
+        },
+      },
     ],
   },
 };

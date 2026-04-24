@@ -22,7 +22,7 @@ export default function NichePage({ params }) {
   return (
     <div className="relative min-h-screen bg-neutral-950">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_10%,rgba(80,80,255,0.12),transparent_80%)]" />
-      <ServicesLanding headline={niche.headline} subheading={niche.subheading} />
+      <ServicesLanding headline={niche.headline} subheading={niche.subheading} whatsappMessage={niche.whatsappMessage} />
     </div>
   );
 }

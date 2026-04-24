@@ -6,14 +6,19 @@ export const niches = {
     headline: "Hai posti liberi in agenda che nessuno prenota?",
     subheading:
       "Un sito professionale per il tuo salone, pronto in 48 ore, che trasforma le ricerche online in appuntamenti. Paghi una volta sola. Parli direttamente con me.",
+    whatsappMessage:
+      "Ciao Mateusz, gestisco un salone di parrucchiere e vorrei un nuovo sito. Possiamo parlarne?",
   },
   "personal-trainer": {
-    title: "Sito Web per Personal Trainer a Perugia | Pronto in 48h | Mateusz Rodz",
+    title:
+      "Sito Web per Personal Trainer a Perugia | Pronto in 48h | Mateusz Rodz",
     description:
       "I tuoi nuovi clienti arrivano solo dal passaparola? Creo una landing page per personal trainer in 48 ore che acquisisce clienti online. Da €300.",
     headline: "I tuoi nuovi clienti arrivano solo dal passaparola?",
     subheading:
       "Una landing page professionale che acquisisce clienti mentre ti alleni. Pronta in 48 ore, paghi una volta sola. Parli direttamente con me.",
+    whatsappMessage:
+      "Ciao Mateusz, sono un personal trainer e vorrei una landing page per acquisire nuovi clienti. Possiamo parlarne?",
   },
   ristoranti: {
     title: "Sito Web per Ristoranti a Perugia | Pronto in 48h | Mateusz Rodz",
@@ -22,5 +27,7 @@ export const niches = {
     headline: "Hai tavoli vuoti nelle sere infrasettimanali?",
     subheading:
       "Un sito con menu, prenotazioni dirette e Google Maps, pronto in 48 ore. Smetti di dipendere da TheFork e pagare commissioni. Parli direttamente con me.",
+    whatsappMessage:
+      "Ciao Mateusz, ho un ristorante e vorrei un nuovo sito vetrina. Possiamo parlarne?",
   },
 };
