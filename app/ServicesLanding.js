@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Quote } from "lucide-react";
@@ -11,6 +11,32 @@ export default function ServicesLanding({
   whatsappMessage = "Ciao Mateusz, vorrei informazioni sui tuoi servizi",
 }) {
   const [formStatus, setFormStatus] = useState("");
+
+  useEffect(() => {
+    const sections = [
+      { id: "servizi", event: "section-pricing" },
+      { id: "contatti", event: "section-contact" },
+    ];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const section = sections.find((s) => s.id === entry.target.id);
+            if (section) {
+              window.umami?.track(section.event);
+              observer.unobserve(entry.target);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -26,6 +52,9 @@ export default function ServicesLanding({
       body: JSON.stringify({ form }),
     });
     const data = await res.json();
+    if (res.ok) {
+      window.umami?.track("form-submit");
+    }
     setFormStatus(res.ok ? data.message : "Invio fallito. Riprova più tardi.");
   }
   // bg-neutral-950 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.07),_transparent_70%)]
@@ -50,6 +79,7 @@ export default function ServicesLanding({
         </p>
         <a
           href="#contatti"
+          data-umami-event="cta-hero"
           className="inline-block bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-xl text-lg font-semibold shadow-lg scroll-smooth"
         >
           Prenota una call gratuita
@@ -95,6 +125,7 @@ export default function ServicesLanding({
         </div>
         <a
           href="/portfolio"
+          data-umami-event="portfolio-click"
           className="inline-block mt-8 text-sm text-neutral-500 hover:text-neutral-300 transition"
         >
           Scopri il mio percorso <ArrowRight className="w-4 h-4 inline ml-1" />
@@ -251,6 +282,7 @@ export default function ServicesLanding({
             <p className="text-white font-semibold mb-4">Da €50 a €250</p>
             <a
               href="#contatti"
+              data-umami-event="cta-fix"
               className="text-blue-500 hover:underline font-semibold"
             >
               Richiedi un fix veloce{" "}
@@ -282,6 +314,7 @@ export default function ServicesLanding({
             <p className="text-white font-semibold mb-4">Da €300 a €450</p>
             <a
               href="#contatti"
+              data-umami-event="cta-landing"
               className="text-blue-500 hover:underline font-semibold"
             >
               Prenota la tua landing{" "}
@@ -319,6 +352,7 @@ export default function ServicesLanding({
             <p className="text-white font-semibold mb-4">Da €500 a €700</p>
             <a
               href="#contatti"
+              data-umami-event="cta-prenotazioni"
               className="text-blue-400 hover:underline font-semibold"
             >
               Richiedi un preventivo{" "}
@@ -557,6 +591,7 @@ export default function ServicesLanding({
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contattami su WhatsApp"
+        data-umami-event="whatsapp-click"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 transition text-white font-semibold px-4 py-3 rounded-full shadow-xl"
       >
         <svg

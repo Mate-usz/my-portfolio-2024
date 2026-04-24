@@ -27,6 +27,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="it">
+      <head>
+        <script
+          defer
+          src="https://umami.mateuszrodz.com/script.js"
+          data-website-id="2fba60b2-a076-40a0-b472-1deec566efc2"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${astonpoliz.variable} antialiased`}
       >
