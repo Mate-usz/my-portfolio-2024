@@ -17,7 +17,7 @@ export const metadata = {
   openGraph: {
     title: "Servizi Web per Freelance e Piccole Imprese",
     description:
-      "Landing page performanti, micro SaaS e sviluppo su misura per piccole attività e professionisti.",
+      "Il tuo sito non porta clienti? Creo landing page professionali in 48 ore. Niente agenzie, parli direttamente con me.",
     url: "https://mateuszrodz.com/#services",
     siteName: "Mateusz Developer",
     images: [

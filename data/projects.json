@@ -1,10 +1,10 @@
 {
   "projects": [
     {
-      "title": "Alphacuts",
+      "title": "Alphacut",
       "category": "web",
       "description": "SaaS tool to remove solid backgrounds from images instantly. Fast, clean and optimized for the web.",
-      "image": "/alphacuts.png",
+      "image": "/alphacut.png",
       "href": "https://alphacut.pics",
       "technologies": ["Next.js", "Tailwind"]
     },

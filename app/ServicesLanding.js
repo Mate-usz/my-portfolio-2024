@@ -5,7 +5,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Quote } from "lucide-react";
 
-export default function ServicesLanding() {
+export default function ServicesLanding({
+  headline = "Il tuo sito non porta clienti?",
+  subheading = "Creo landing page che trasformano visitatori in contatti, pronte in 48 ore. Niente agenzie, niente attese. Parli direttamente con me.",
+}) {
   const [formStatus, setFormStatus] = useState("");
 
   async function handleSubmit(event) {
@@ -36,11 +39,10 @@ export default function ServicesLanding() {
         className="max-w-5xl mx-auto px-6 py-24 text-center"
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-6 font-sans">
-          Realizzo Landing Page Professionali per Freelance e Piccole Attività
+          {headline}
         </h1>
         <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-10">
-          Risolvo bug, ottimizzo le performance del tuo sito e creo landing page
-          moderne in 48-72 ore. Risultati rapidi, chiari e professionali.
+          {subheading}
         </p>
         <a
           href="#contatti"
@@ -429,6 +431,10 @@ export default function ServicesLanding() {
             {
               q: "Come funziona il pagamento?",
               a: "50% all'avvio del progetto, 50% alla consegna. Accetto bonifico bancario e PayPal.",
+            },
+            {
+              q: "Garantisci nuovi clienti dopo la consegna?",
+              a: "No. Chi te lo garantisce sta mentendo. Quello che consegno è uno strumento professionale, veloce e costruito per convertire. Portare traffico è il passo successivo. Ti spiego anche come farlo.",
             },
           ].map(({ q, a }) => (
             <details
