@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "Mateusz Developer",
     images: [
       {
-        url: "https://mateuszrodz.com/og-image.jpg",
+        url: "https://mateuszrodz.com/og-image.png",
         width: 1200,
         height: 630,
       },
