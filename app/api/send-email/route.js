@@ -12,7 +12,7 @@ export async function POST(req, res) {
     await sendEmail(form);
     return new Response(
       JSON.stringify({
-        message: "Message sent successfully!",
+        message: "Messaggio inviato! Ti rispondo entro poche ore.",
       }),
       {
         status: 200,
@@ -21,7 +21,7 @@ export async function POST(req, res) {
   } catch (error) {
     return new Response(
       JSON.stringify({
-        message: "An error occurred while sending the message.",
+        message: "Invio fallito. Riprova più tardi.",
       }),
       {
         status: 500,
