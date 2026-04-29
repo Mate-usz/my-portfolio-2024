@@ -21,19 +21,22 @@ export default function Projects({ projects, viewMore = false, locale = "en" }) 
       )}
       <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
         {projects.map((project, index) => (
-          <div
+          <Link
             key={index}
-            className="flex flex-col border border-gray-600 rounded-lg p-4"
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-umami-event="project-click"
+            data-umami-event-title={project.title}
+            className="flex flex-col border border-gray-600 rounded-lg p-4 hover:border-gray-400 transition-colors"
           >
-            <Link href={project.href}>
-              <Image
-                src={project.image}
-                width={500}
-                height={300}
-                alt={project.title}
-                className="w-full h-40 object-cover rounded"
-              />
-            </Link>
+            <Image
+              src={project.image}
+              width={500}
+              height={300}
+              alt={project.title}
+              className="w-full h-40 object-cover rounded"
+            />
             <h3 className="text-xl font-semibold mt-4">{project.title}</h3>
             <p className="text-gray-600 dark:text-gray-400 mt-2 mb-auto text-sm">
               {project.description}
@@ -48,7 +51,7 @@ export default function Projects({ projects, viewMore = false, locale = "en" }) 
                 </div>
               ))}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

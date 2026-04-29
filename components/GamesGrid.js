@@ -98,7 +98,7 @@ export default function GamesGrid({ games }) {
         {games.map((game, index) => (
           <button
             key={index}
-            onClick={() => setActiveGame(game)}
+            onClick={() => { setActiveGame(game); window.umami?.track("game-open", { title: game.title }); }}
             className="text-left flex flex-col border border-gray-600 rounded-lg overflow-hidden hover:border-gray-400 transition-colors group w-full max-w-sm"
           >
             {/* Thumbnail */}
