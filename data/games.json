@@ -1,0 +1,11 @@
+{
+  "games": [
+    {
+      "title": "Dodo Runner",
+      "description": "Platform runner with Dodo - create the best Youtube title!",
+      "thumbnail": "/game/dodo-runner/thumbnail.png",
+      "path": "/game/dodo-runner/index.html",
+      "tags": ["GameMaker", "HTML5", "Platform"]
+    }
+  ]
+}
