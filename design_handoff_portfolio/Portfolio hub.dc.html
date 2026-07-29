@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="_ds/nocturne-f44123bd-d39d-4650-ac66-e62f9934ca09/styles.css">
+<script src="_ds/nocturne-f44123bd-d39d-4650-ac66-e62f9934ca09/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:#0e0f18;font-family:var(--font-body)}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(255,255,255,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:var(--color-accent);color:#161826;border-radius:4px;text-decoration:none}
+.dv-tname{font:500 13px/1.2 var(--font-heading);color:var(--color-text)}
+.dv-opts{display:flex;flex-wrap:wrap;gap:34px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(255,255,255,.09);color:var(--color-text);border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11.5px/1.3 var(--font-body);color:color-mix(in srgb,var(--color-text) 55%,transparent)}
+.dv-card{max-width:100%;background:var(--color-bg);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.dv-opt:target .dv-oid{background:var(--color-accent);color:#161826}
+.dv-next{margin:22px 0 0;font:12px/1.5 var(--font-body);color:color-mix(in srgb,var(--color-text) 50%,transparent)}
+.dv-next a,.dv-thd a{text-decoration:none}
+</style>
+</helmet>
+
+<section class="dv-turn" id="final">
+<div class="dv-thd"><a class="dv-tid" href="#final">OK</a><span class="dv-tname">Versioni finali - le schermate da sviluppare</span></div>
+<div class="dv-opts" style="flex-direction:column;align-items:flex-start">
+<div style="max-width:760px;font-size:13.5px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 62%,transparent)">Otto schermate: quattro pagine per due formati. Le esplorazioni scartate stanno nel file <strong style="color:var(--color-text);font-weight:500">Portfolio hub - esplorazioni</strong>; qui c'è solo il risultato. Gli id (2a, 9a, 4a e gli altri) sono quelli usati dai link di navigazione fra le schermate.</div>
+</div>
+</section>
+
+<section class="dv-turn" id="screens">
+<div class="dv-thd"><a class="dv-tid" href="#screens">1</a><span class="dv-tname">Le schermate</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Homepage - desktop</div>
+<div class="dv-card" style="width:1120px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 60px">
+    <span style="font-family:var(--font-heading);font-weight:500;font-size:13.5px;letter-spacing:-.01em">MR</span>
+    <div style="display:flex;align-items:center;gap:22px">
+      <div style="display:flex;gap:16px"><a href="#4a" style="text-decoration:none;font-size:13px;color:color-mix(in srgb,var(--color-text) 55%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#7a" style="text-decoration:none;font-size:13px;color:color-mix(in srgb,var(--color-text) 55%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#6a" style="text-decoration:none;font-size:13px;color:color-mix(in srgb,var(--color-text) 55%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div>
+      <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+        <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+        <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:70px 60px 0;max-width:820px">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:26px">
+      <image-slot id="m2a-photo" shape="circle" style="width:64px;height:64px;flex:none" placeholder="You"></image-slot>
+      <div>
+        <h1 style="font-size:34px;margin:0 0 4px;letter-spacing:-.025em">Mateusz Rodz</h1>
+        <div style="font-size:13.5px;color:color-mix(in srgb,var(--color-text) 52%,transparent)">{{ t.heroKicker }}</div>
+      </div>
+    </div>
+    <p style="font-size:17px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:0 0 12px;text-wrap:pretty">{{ t.bioA }}</p>
+    <p style="font-size:17px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:0;text-wrap:pretty">{{ t.bioB }}</p>
+  </div>
+
+  <div style="padding:64px 60px 70px">
+    <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:22px">
+      <h2 style="font-size:20px;margin:0">{{ t.seekTitle }}</h2>
+      <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 45%,transparent)">{{ t.seekSub }}</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--color-divider);border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+      <sc-for list="{{ doors }}" as="d" hint-placeholder-count="3">
+        <a href="#2a" style="text-decoration:none;color:inherit;background:var(--color-bg);padding:24px 22px 20px;display:flex;flex-direction:column;gap:9px;min-height:150px" style-hover="background:var(--color-accent-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:-2px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between"><h3 style="font-size:18px;margin:0">{{ d.title }}</h3><span style="font:11.5px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 45%,transparent)">{{ d.meta }}</span></div>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 64%,transparent)">{{ d.body }}</p>
+          <span style="margin-top:auto;font-size:12.5px;color:var(--color-accent-300);display:inline-flex;align-items:center;gap:6px">{{ d.go }} <svg width="13" height="13" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" style="flex:none;vertical-align:-2px"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg></span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+  <div style="padding:0 60px 60px">
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--color-divider);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+      <a href="mailto:rodzmateusz@gmail.com" style="background:var(--color-bg);text-decoration:none;color:inherit;padding:20px 22px;display:flex;flex-direction:column;gap:5px" style-hover="background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent);letter-spacing:.06em">{{ t.lblEmail }}</span>
+        <span style="font-size:14.5px">rodzmateusz@gmail.com</span>
+      </a>
+      <a href="tel:+393483749656" style="background:var(--color-bg);text-decoration:none;color:inherit;padding:20px 22px;display:flex;flex-direction:column;gap:5px" style-hover="background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent);letter-spacing:.06em">{{ t.lblPhone }}</span>
+        <span style="font-size:14.5px">+39 348 3749656</span>
+      </a>
+      <a href="https://github.com/Mate-usz" style="background:var(--color-bg);text-decoration:none;color:inherit;padding:20px 22px;display:flex;flex-direction:column;gap:5px" style-hover="background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent);letter-spacing:.06em">GITHUB</span>
+        <span style="font-size:14.5px">Mate-usz</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:18px 60px;border-top:1px solid var(--color-divider);font-size:12px;color:color-mix(in srgb,var(--color-text) 42%,transparent)"><span>{{ t.footer }}</span><span style="display:flex;gap:14px"><a href="https://www.linkedin.com/in/mateusz-rodz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">LinkedIn</a><a href="https://github.com/Mate-usz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">GitHub</a></span></div>
+</div>
+</div>
+
+<div class="dv-opt" id="9a">
+<div class="dv-olabel"><a class="dv-oid" href="#9a">9a</a>Homepage - mobile</div>
+<div class="dv-card" style="width:390px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--color-divider)">
+    <span style="font-family:var(--font-heading);font-weight:500;font-size:13.5px">MR</span>
+    <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+      <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+      <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+    </div>
+  </div>
+
+  <div style="padding:34px 20px 0">
+    <image-slot id="m9a-portrait" shape="circle" style="width:96px;height:96px;margin-bottom:20px" placeholder="Portrait"></image-slot>
+    <h1 style="font-size:27px;margin:0 0 4px;letter-spacing:-.022em">Mateusz Rodz</h1>
+    <div style="font-size:13px;color:color-mix(in srgb,var(--color-text) 52%,transparent);margin-bottom:18px">{{ t.heroKicker }}</div>
+    <p style="font-size:15px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 78%,transparent);margin:0 0 12px;text-wrap:pretty">{{ t.bioA }}</p>
+    <p style="font-size:15px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0;text-wrap:pretty">{{ t.bioB }}</p>
+  </div>
+
+  <div style="padding:40px 20px 0">
+    <h2 style="font-size:18px;margin:0 0 4px">{{ t.seekTitle }}</h2>
+    <p style="font-size:13px;color:color-mix(in srgb,var(--color-text) 45%,transparent);margin:0 0 18px">{{ t.seekSub }}</p>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <sc-for list="{{ doors }}" as="d" hint-placeholder-count="3">
+        <a href="#9a" style="text-decoration:none;color:inherit;border:1px solid var(--color-divider);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:7px;min-height:46px" style-hover="border-color:var(--color-neutral-600);background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+            <h3 style="font-size:17px;margin:0">{{ d.title }}</h3>
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="var(--color-accent)" aria-hidden="true" style="flex:none;vertical-align:-2px"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path></svg>
+          </div>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:color-mix(in srgb,var(--color-text) 64%,transparent);text-wrap:pretty">{{ d.body }}</p>
+          <span style="font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ d.meta }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:34px 20px 0">
+    <h6 style="color:color-mix(in srgb,var(--color-text) 42%,transparent);margin:0 0 10px">{{ t.navContact }}</h6>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--color-divider)">
+      <a href="mailto:rodzmateusz@gmail.com" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblEmail }}</span><span style="font-size:13.5px">rodzmateusz@gmail.com</span>
+      </a>
+      <a href="tel:+393483749656" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblPhone }}</span><span style="font-size:13.5px">+39 348 3749656</span>
+      </a>
+      <a href="https://github.com/Mate-usz" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">GITHUB</span><span style="font-size:13.5px">Mate-usz</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px 26px;font-size:11.5px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.footer }}</div>
+</div>
+</div>
+
+<div class="dv-opt" id="4a">
+<div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>Cucina - desktop</div>
+<div class="dv-card" style="width:1120px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 60px">
+    <div style="display:flex;align-items:center;gap:18px"><span style="font-family:var(--font-heading);font-weight:500;font-size:13.5px">MR</span><div style="display:flex;gap:16px"><a href="#4a" style="text-decoration:none;font-size:13.5px;color:var(--color-text)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#7a" style="text-decoration:none;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#6a" style="text-decoration:none;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div></div>
+    <div style="display:flex;align-items:center;gap:22px">
+      <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary" style="font-size:13px">{{ t.kCta }}</a>
+      <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+        <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+        <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:end;padding:60px 60px 0">
+    <div>
+      <h1 style="font-size:34px;margin:0 0 16px;letter-spacing:-.025em">{{ t.kTitle }}</h1>
+      <p style="font-size:16px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0;max-width:620px;text-wrap:pretty">{{ t.kLead }}</p>
+    </div>
+    <div style="border-left:1px solid var(--color-accent-700);padding-left:16px">
+      <h6 style="color:var(--color-accent);margin:0 0 8px">{{ t.kAvailTitle }}</h6>
+      <p style="font-size:12.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0">{{ t.kAvail }}</p>
+    </div>
+  </div>
+
+  <div style="padding:46px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:16px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">01</span>
+      <h2 style="font-size:19px;margin:0">{{ t.kGallery }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr);gap:14px">
+      <sc-for list="{{ galleryLead }}" as="g" hint-placeholder-count="3">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+          <image-slot id="g4a-lead-{{ $index }}" radius="8" style="height:268px" placeholder="{{ g.c }}"></image-slot>
+          <figcaption style="font-size:12px;margin:0;color:color-mix(in srgb,var(--color-text) 64%,transparent)">{{ g.c }} <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">{{ g.s }}</span></figcaption>
+        </figure>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:22px">
+      <sc-for list="{{ galleryRest }}" as="g" hint-placeholder-count="5">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:7px">
+          <image-slot id="g4a-rest-{{ $index }}" radius="8" style="height:118px" placeholder="{{ g.c }}"></image-slot>
+          <figcaption style="font-size:11.5px;margin:0;color:color-mix(in srgb,var(--color-text) 56%,transparent)">{{ g.c }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:66px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:26px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">02</span>
+      <h2 style="font-size:19px;margin:0">{{ t.kWhat }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--color-divider);padding-top:14px">
+          <h3 style="font-size:17px;margin:0">{{ c.title }}</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 66%,transparent);text-wrap:pretty">{{ c.body }}</p>
+          <p style="margin:0;font:11.5px/1.7 ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ c.spec }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:70px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">03</span>
+      <h2 style="font-size:19px;margin:0">{{ t.kLog }}</h2>
+    </div>
+    <p style="font-size:13.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 50%,transparent);margin:0 0 18px;max-width:520px">{{ t.kLogNote }}</p>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ log }}" as="l" hint-placeholder-count="5">
+        <div style="display:grid;grid-template-columns:70px 200px 280px minmax(0,1fr);gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--color-divider)">
+          <span style="font:12px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ l.date }}</span>
+          <span style="font-family:var(--font-heading);font-weight:500;font-size:14px">{{ l.name }}</span>
+          <span style="font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ l.dough }}</span>
+          <span style="font-size:13px;color:color-mix(in srgb,var(--color-text) 60%,transparent)">{{ l.note }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:14px 60px 0">
+    <p style="display:inline-flex;gap:9px;align-items:baseline;margin:0;transform:rotate(-.35deg);font:12px/1.6 ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 44%,transparent)"><span style="width:5px;height:5px;border-radius:50%;background:var(--color-accent);display:block;flex:none;transform:translateY(-2px)"></span><span>{{ t.kLogFoot }}</span></p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:56px;align-items:start;padding:74px 60px 72px">
+    <div style="max-width:580px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">04</span>
+        <h2 style="font-size:19px;margin:0">{{ t.kAsk }}</h2>
+      </div>
+      <p style="font-size:15.5px;line-height:1.64;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 22px;text-wrap:pretty">{{ t.kAskBody }}</p>
+      <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary">{{ t.kCta }}</a>
+    </div>
+    <div style="border-top:1px solid var(--color-divider);padding-top:14px">
+      <h6 style="color:color-mix(in srgb,var(--color-text) 42%,transparent);margin:0 0 12px">{{ t.kSkills }}</h6>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <sc-for list="{{ t.kSkillsL }}" as="s" hint-placeholder-count="6">
+          <div style="display:flex;gap:10px;align-items:baseline;font-size:13px;color:color-mix(in srgb,var(--color-text) 70%,transparent)"><span style="width:5px;height:5px;border-radius:50%;background:var(--color-accent);display:block;flex:none;transform:translateY(-3px)"></span><span>{{ s }}</span></div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:0 60px 66px">
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--color-divider);border-top:1px solid var(--color-divider);border-bottom:1px solid var(--color-divider)">
+      <a href="mailto:rodzmateusz@gmail.com" style="background:var(--color-bg);text-decoration:none;color:inherit;padding:20px 22px;display:flex;flex-direction:column;gap:5px" style-hover="background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent);letter-spacing:.06em">{{ t.lblEmail }}</span>
+        <span style="font-size:14.5px">rodzmateusz@gmail.com</span>
+      </a>
+      <a href="tel:+393483749656" style="background:var(--color-bg);text-decoration:none;color:inherit;padding:20px 22px;display:flex;flex-direction:column;gap:5px" style-hover="background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent);letter-spacing:.06em">{{ t.lblPhone }}</span>
+        <span style="font-size:14.5px">+39 348 3749656</span>
+      </a>
+      <a href="https://www.linkedin.com/in/mateusz-rodz" style="background:var(--color-bg);text-decoration:none;color:inherit;padding:20px 22px;display:flex;flex-direction:column;gap:5px" style-hover="background:var(--color-neutral-900)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent);letter-spacing:.06em">LINKEDIN</span>
+        <span style="font-size:14.5px">mateusz-rodz</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:18px 60px;border-top:1px solid var(--color-divider);font-size:12px;color:color-mix(in srgb,var(--color-text) 42%,transparent)"><span>{{ t.footer }}</span><span style="display:flex;gap:14px"><a href="https://mateuszrodz.com/portfolio" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">Portfolio</a><a href="https://www.linkedin.com/in/mateusz-rodz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">LinkedIn</a><a href="https://github.com/Mate-usz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">GitHub</a></span></div>
+</div>
+</div>
+
+<div class="dv-opt" id="5a">
+<div class="dv-olabel"><a class="dv-oid" href="#5a">5a</a>Cucina - mobile</div>
+<div class="dv-card" style="width:390px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--color-divider);position:sticky;top:0;background:var(--color-bg);z-index:2">
+    <div style="display:flex;align-items:center;gap:12px"><span style="font-family:var(--font-heading);font-weight:500;font-size:12.5px">MR</span><div style="display:flex;gap:11px"><a href="#5a" style="text-decoration:none;font-size:12.5px;color:var(--color-text)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#8b" style="text-decoration:none;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#8a" style="text-decoration:none;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div></div>
+    <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+      <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+      <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+    </div>
+  </div>
+
+  <div style="padding:32px 20px 0">
+    <h1 style="font-size:27px;line-height:1.18;margin:0 0 14px;letter-spacing:-.022em">{{ t.kTitle }}</h1>
+    <p style="font-size:15px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 20px;text-wrap:pretty">{{ t.kLead }}</p>
+    <div style="border-left:1px solid var(--color-accent-700);padding-left:14px;margin-bottom:22px">
+      <h6 style="color:var(--color-accent);margin:0 0 6px">{{ t.kAvailTitle }}</h6>
+      <p style="font-size:12.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0">{{ t.kAvail }}</p>
+    </div>
+    <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary btn-block" style="min-height:46px;display:flex;align-items:center;justify-content:center">{{ t.kCta }}</a>
+  </div>
+
+  <div style="padding:38px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">01</span>
+      <h2 style="font-size:17px;margin:0">{{ t.kGallery }}</h2>
+    </div>
+    <figure style="margin:0 0 12px;display:flex;flex-direction:column;gap:7px">
+      <image-slot id="m4a-hero" radius="8" style="height:230px" placeholder="Pizza napoletana"></image-slot>
+      <figcaption style="font-size:12px;margin:0;color:color-mix(in srgb,var(--color-text) 62%,transparent)">Pizza napoletana <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">72h</span></figcaption>
+    </figure>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+      <sc-for list="{{ galleryRest }}" as="g" hint-placeholder-count="4">
+        <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+          <image-slot id="m4a-{{ $index }}" radius="8" style="height:126px" placeholder="{{ g.c }}"></image-slot>
+          <figcaption style="font-size:11.5px;margin:0;color:color-mix(in srgb,var(--color-text) 56%,transparent)">{{ g.c }}</figcaption>
+        </figure>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:42px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">02</span>
+      <h2 style="font-size:17px;margin:0">{{ t.kWhat }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <sc-for list="{{ cats }}" as="c" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--color-divider);padding-top:13px">
+          <h3 style="font-size:16px;margin:0">{{ c.title }}</h3>
+          <p style="margin:0;font-size:13.5px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 66%,transparent);text-wrap:pretty">{{ c.body }}</p>
+          <p style="margin:0;font:11.5px/1.7 ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ c.spec }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:42px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">03</span>
+      <h2 style="font-size:17px;margin:0">{{ t.kLog }}</h2>
+    </div>
+    <p style="font-size:13px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 50%,transparent);margin:0 0 14px">{{ t.kLogNote }}</p>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ log }}" as="l" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:4px;padding:13px 0;border-bottom:1px solid var(--color-divider)">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <span style="font-family:var(--font-heading);font-weight:500;font-size:14px">{{ l.name }}</span>
+            <span style="font:12px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ l.date }}</span>
+          </div>
+          <span style="font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ l.dough }}</span>
+          <span style="font-size:13px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 58%,transparent)">{{ l.note }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <p style="display:flex;gap:8px;align-items:baseline;margin:14px 0 0;transform:rotate(-.35deg);font:11.5px/1.6 ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 44%,transparent)"><span style="width:5px;height:5px;border-radius:50%;background:var(--color-accent);display:block;flex:none;transform:translateY(-2px)"></span><span>{{ t.kLogFoot }}</span></p>
+  </div>
+
+  <div style="padding:42px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">04</span>
+      <h2 style="font-size:17px;margin:0">{{ t.kAsk }}</h2>
+    </div>
+    <p style="font-size:15px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 18px;text-wrap:pretty">{{ t.kAskBody }}</p>
+    <h6 style="color:color-mix(in srgb,var(--color-text) 42%,transparent);margin:0 0 10px">{{ t.kSkills }}</h6>
+    <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:22px">
+      <sc-for list="{{ t.kSkillsL }}" as="s" hint-placeholder-count="6">
+        <div style="display:flex;gap:10px;align-items:baseline;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 70%,transparent)"><span style="width:5px;height:5px;border-radius:50%;background:var(--color-accent);display:block;flex:none;transform:translateY(-3px)"></span><span>{{ s }}</span></div>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--color-divider)">
+      <a href="mailto:rodzmateusz@gmail.com" style="text-decoration:none;color:inherit;padding:14px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblEmail }}</span><span style="font-size:14px">rodzmateusz@gmail.com</span>
+      </a>
+      <a href="tel:+393483749656" style="text-decoration:none;color:inherit;padding:14px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblPhone }}</span><span style="font-size:14px">+39 348 3749656</span>
+      </a>
+      <a href="https://www.linkedin.com/in/mateusz-rodz" style="text-decoration:none;color:inherit;padding:14px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">LINKEDIN</span><span style="font-size:14px">mateusz-rodz</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px 26px;font-size:11.5px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.footer }}</div>
+</div>
+</div>
+
+<div class="dv-opt" id="6a">
+<div class="dv-olabel"><a class="dv-oid" href="#6a">6a</a>Servizi - desktop</div>
+<div class="dv-card" style="width:1120px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 60px">
+    <div style="display:flex;align-items:center;gap:18px"><span style="font-family:var(--font-heading);font-weight:500;font-size:13.5px">MR</span><div style="display:flex;gap:16px"><a href="#4a" style="text-decoration:none;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#7a" style="text-decoration:none;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#6a" style="text-decoration:none;font-size:13.5px;color:var(--color-text)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div></div>
+    <div style="display:flex;align-items:center;gap:22px">
+      <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary" style="font-size:13px">{{ t.sCta }}</a>
+      <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+        <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+        <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:end;padding:60px 60px 0">
+    <div>
+      <h1 style="font-size:34px;margin:0 0 16px;letter-spacing:-.025em">{{ t.sTitle }}</h1>
+      <p style="font-size:16px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0;max-width:620px;text-wrap:pretty">{{ t.sLead }}</p>
+    </div>
+    <div style="border-left:1px solid var(--color-accent-700);padding-left:16px">
+      <h6 style="color:var(--color-accent);margin:0 0 8px">{{ t.sRailT }}</h6>
+      <p style="font-size:12.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0">{{ t.sRail }}</p>
+    </div>
+  </div>
+
+  <div style="padding:52px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:26px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">01</span>
+      <h2 style="font-size:19px;margin:0">{{ t.sWhat }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 56px">
+      <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:9px;border-top:1px solid var(--color-divider);padding-top:14px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+            <div style="display:flex;align-items:baseline;gap:10px">
+              <h3 style="font-size:17px;margin:0">{{ p.name }}</h3>
+              <sc-if value="{{ p.premium }}" hint-placeholder-val="{{ true }}">
+                <span style="font:500 10px var(--font-heading);letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-200);border:1px solid var(--color-accent-700);border-radius:99px;padding:2px 8px">{{ p.premium }}</span>
+              </sc-if>
+            </div>
+            <span style="font:500 14px var(--font-heading);color:var(--color-accent-200)">{{ p.price }}</span>
+          </div>
+          <p style="margin:0;font-size:13.5px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 66%,transparent);text-wrap:pretty">{{ p.body }}</p>
+          <p style="margin:0;font:11.5px/1.7 ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ p.spec }}</p>
+          <p style="margin:2px 0 0;font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.sDeliv }} {{ p.delivery }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:70px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:22px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">02</span>
+      <h2 style="font-size:19px;margin:0">{{ t.sHow }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 34%,transparent);letter-spacing:.08em">{{ st.n }}</span>
+          <h3 style="font-size:15.5px;margin:0">{{ st.title }}</h3>
+          <p style="margin:0;font-size:13px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 62%,transparent);text-wrap:pretty">{{ st.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:70px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:8px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">03</span>
+      <h2 style="font-size:19px;margin:0">{{ t.sProof }}</h2>
+    </div>
+    <p style="font-size:13.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 50%,transparent);margin:0 0 18px;max-width:540px">{{ t.sProofNote }}</p>
+    <div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:14px">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+        <image-slot id="s6a-1" radius="8" style="height:250px" placeholder="RSVmotori"></image-slot>
+        <figcaption style="font-size:12.5px;margin:0;color:color-mix(in srgb,var(--color-text) 66%,transparent)">{{ t.sJob1 }} <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">{{ t.sJob1S }}</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+        <image-slot id="s6a-2" radius="8" style="height:250px" placeholder="Kobocraft"></image-slot>
+        <figcaption style="font-size:12.5px;margin:0;color:color-mix(in srgb,var(--color-text) 66%,transparent)">{{ t.sJob2 }} <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">{{ t.sJob2S }}</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+        <image-slot id="s6a-3" radius="8" style="height:250px" placeholder="heyHuby"></image-slot>
+        <figcaption style="font-size:12.5px;margin:0;color:color-mix(in srgb,var(--color-text) 66%,transparent)">{{ t.sJob3 }} <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">{{ t.sJob3S }}</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) 288px;gap:56px;align-items:start;padding:74px 60px 66px">
+    <div style="max-width:580px">
+      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">04</span>
+        <h2 style="font-size:19px;margin:0">{{ t.sNo }}</h2>
+      </div>
+      <p style="font-size:15.5px;line-height:1.64;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 22px;text-wrap:pretty">{{ t.sNoBody }}</p>
+      <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary">{{ t.sCta }}</a>
+    </div>
+    <div style="border-top:1px solid var(--color-divider);padding-top:14px">
+      <h6 style="color:color-mix(in srgb,var(--color-text) 42%,transparent);margin:0 0 12px">{{ t.navContact }}</h6>
+      <div style="display:flex;flex-direction:column">
+        <a href="mailto:rodzmateusz@gmail.com" style="text-decoration:none;color:inherit;font-size:13.5px;padding:7px 0" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">rodzmateusz@gmail.com</a>
+        <a href="tel:+393483749656" style="text-decoration:none;color:inherit;font-size:13.5px;padding:7px 0" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">+39 348 3749656</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:18px 60px;border-top:1px solid var(--color-divider);font-size:12px;color:color-mix(in srgb,var(--color-text) 42%,transparent)"><span>{{ t.footer }}</span><span style="display:flex;gap:14px"><a href="https://mateuszrodz.com/portfolio" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">Portfolio</a><a href="https://www.linkedin.com/in/mateusz-rodz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">LinkedIn</a><a href="https://github.com/Mate-usz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">GitHub</a></span></div>
+</div>
+</div>
+
+<div class="dv-opt" id="8a">
+<div class="dv-olabel"><a class="dv-oid" href="#8a">8a</a>Servizi - mobile</div>
+<div class="dv-card" style="width:390px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--color-divider);position:sticky;top:0;background:var(--color-bg);z-index:2">
+    <div style="display:flex;align-items:center;gap:12px"><span style="font-family:var(--font-heading);font-weight:500;font-size:12.5px">MR</span><div style="display:flex;gap:11px"><a href="#5a" style="text-decoration:none;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#8b" style="text-decoration:none;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#8a" style="text-decoration:none;font-size:12.5px;color:var(--color-text)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div></div>
+    <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+      <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+      <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+    </div>
+  </div>
+
+  <div style="padding:30px 20px 0">
+    <h1 style="font-size:26px;line-height:1.2;margin:0 0 14px;letter-spacing:-.022em">{{ t.sTitle }}</h1>
+    <p style="font-size:15px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 20px;text-wrap:pretty">{{ t.sLead }}</p>
+    <div style="border-left:1px solid var(--color-accent-700);padding-left:14px;margin-bottom:22px">
+      <h6 style="color:var(--color-accent);margin:0 0 6px">{{ t.sRailT }}</h6>
+      <p style="font-size:12.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0">{{ t.sRail }}</p>
+    </div>
+    <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary btn-block" style="min-height:46px;display:flex;align-items:center;justify-content:center">{{ t.sCta }}</a>
+  </div>
+
+  <div style="padding:38px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:18px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">01</span>
+      <h2 style="font-size:17px;margin:0">{{ t.sWhat }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid var(--color-divider);padding-top:13px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+            <h3 style="font-size:16px;margin:0">{{ p.name }}</h3>
+            <span style="font:500 14px var(--font-heading);color:var(--color-accent-200)">{{ p.price }}</span>
+          </div>
+          <sc-if value="{{ p.premium }}" hint-placeholder-val="{{ true }}">
+            <span style="align-self:flex-start;font:500 10px var(--font-heading);letter-spacing:.09em;text-transform:uppercase;color:var(--color-accent-200);border:1px solid var(--color-accent-700);border-radius:99px;padding:2px 8px">{{ p.premium }}</span>
+          </sc-if>
+          <p style="margin:0;font-size:13.5px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 66%,transparent);text-wrap:pretty">{{ p.body }}</p>
+          <p style="margin:0;font:11.5px/1.7 ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ p.spec }}</p>
+          <p style="margin:0;font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.sDeliv }} {{ p.delivery }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:40px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">02</span>
+      <h2 style="font-size:17px;margin:0">{{ t.sHow }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;align-items:baseline">
+          <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 34%,transparent);letter-spacing:.08em">{{ st.n }}</span>
+          <div>
+            <h3 style="font-size:15px;margin:0 0 5px">{{ st.title }}</h3>
+            <p style="margin:0;font-size:13px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 62%,transparent);text-wrap:pretty">{{ st.body }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:40px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">03</span>
+      <h2 style="font-size:17px;margin:0">{{ t.sProof }}</h2>
+    </div>
+    <p style="font-size:13px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 50%,transparent);margin:0 0 14px">{{ t.sProofNote }}</p>
+    <figure style="margin:0 0 12px;display:flex;flex-direction:column;gap:7px">
+      <image-slot id="s8a-1" radius="8" style="height:200px" placeholder="RSVmotori"></image-slot>
+      <figcaption style="font-size:12px;margin:0;color:color-mix(in srgb,var(--color-text) 62%,transparent)">{{ t.sJob1 }} <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">{{ t.sJob1S }}</span></figcaption>
+    </figure>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+        <image-slot id="s8a-2" radius="8" style="height:120px" placeholder="Kobocraft"></image-slot>
+        <figcaption style="font-size:11.5px;margin:0;color:color-mix(in srgb,var(--color-text) 56%,transparent)">{{ t.sJob2 }}</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+        <image-slot id="s8a-3" radius="8" style="height:120px" placeholder="heyHuby"></image-slot>
+        <figcaption style="font-size:11.5px;margin:0;color:color-mix(in srgb,var(--color-text) 56%,transparent)">{{ t.sJob3 }}</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div style="padding:40px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">04</span>
+      <h2 style="font-size:17px;margin:0">{{ t.sNo }}</h2>
+    </div>
+    <p style="font-size:14.5px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 20px;text-wrap:pretty">{{ t.sNoBody }}</p>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--color-divider)">
+      <a href="mailto:rodzmateusz@gmail.com" style="text-decoration:none;color:inherit;padding:14px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblEmail }}</span><span style="font-size:13.5px">rodzmateusz@gmail.com</span>
+      </a>
+      <a href="tel:+393483749656" style="text-decoration:none;color:inherit;padding:14px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblPhone }}</span><span style="font-size:13.5px">+39 348 3749656</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px 26px;font-size:11.5px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.footer }}</div>
+</div>
+</div>
+
+<div class="dv-opt" id="7a">
+<div class="dv-olabel"><a class="dv-oid" href="#7a">7a</a>Percorso - desktop</div>
+<div class="dv-card" style="width:1120px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 60px">
+    <div style="display:flex;align-items:center;gap:18px"><span style="font-family:var(--font-heading);font-weight:500;font-size:13.5px">MR</span><div style="display:flex;gap:16px"><a href="#4a" style="text-decoration:none;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#7a" style="text-decoration:none;font-size:13.5px;color:var(--color-text)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#6a" style="text-decoration:none;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div></div>
+    <div style="display:flex;align-items:center;gap:22px">
+      <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary" style="font-size:13px">{{ t.wCta }}</a>
+      <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+        <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+        <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);padding:5px 9px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:end;padding:60px 60px 0">
+    <div>
+      <h1 style="font-size:34px;line-height:1.18;margin:0 0 16px;letter-spacing:-.025em">{{ t.wTitle }}</h1>
+      <p style="font-size:16px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0;max-width:620px;text-wrap:pretty">{{ t.wLead }}</p>
+    </div>
+    <div style="border-left:1px solid var(--color-accent-700);padding-left:16px">
+      <h6 style="color:var(--color-accent);margin:0 0 8px">{{ t.wRailT }}</h6>
+      <p style="font-size:12.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0">{{ t.wRail }}</p>
+    </div>
+  </div>
+
+  <div style="padding:46px 60px 0">
+    <div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);gap:14px">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+        <image-slot id="w7a-1" radius="8" style="height:236px" placeholder="heyHuby"></image-slot>
+        <figcaption style="font-size:12.5px;margin:0;color:color-mix(in srgb,var(--color-text) 64%,transparent)">heyHuby <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">Next.js</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+        <image-slot id="w7a-2" radius="8" style="height:236px" placeholder="RSVmotori"></image-slot>
+        <figcaption style="font-size:12.5px;margin:0;color:color-mix(in srgb,var(--color-text) 64%,transparent)">RSVmotori <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">Shopify</span></figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+        <image-slot id="w7a-3" radius="8" style="height:236px" placeholder="Kobocraft"></image-slot>
+        <figcaption style="font-size:12.5px;margin:0;color:color-mix(in srgb,var(--color-text) 64%,transparent)">Kobocraft <span style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:color-mix(in srgb,var(--color-text) 38%,transparent)">Stripe</span></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div style="padding:60px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:18px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">01</span>
+      <h2 style="font-size:19px;margin:0">{{ t.wOwn }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ own }}" as="p" hint-placeholder-count="7">
+        <div style="display:grid;grid-template-columns:132px 224px minmax(0,1fr);gap:26px;align-items:start;padding:20px 0;border-top:1px solid var(--color-divider)">
+          <span style="font:12px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 42%,transparent)">{{ p.when }}</span>
+          <div>
+            <h3 style="font-size:16px;margin:0 0 4px">{{ p.name }}</h3>
+            <p style="margin:0;font:11.5px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 44%,transparent)">{{ p.kind }}</p>
+          </div>
+          <div>
+            <p style="margin:0 0 7px;font-size:13.5px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 72%,transparent);text-wrap:pretty">{{ p.body }}</p>
+            <p style="margin:0;font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ p.stack }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:66px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:18px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">02</span>
+      <h2 style="font-size:19px;margin:0">{{ t.wClients }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
+        <div style="display:grid;grid-template-columns:132px 224px minmax(0,1fr);gap:26px;align-items:start;padding:20px 0;border-top:1px solid var(--color-divider)">
+          <span style="font:12px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 42%,transparent)">{{ c.when }}</span>
+          <div>
+            <h3 style="font-size:16px;margin:0 0 4px">{{ c.name }}</h3>
+            <p style="margin:0;font:11.5px/1.6 ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 44%,transparent)">{{ t.wTeamL }} {{ c.team }}</p>
+          </div>
+          <div>
+            <p style="margin:0 0 7px;font-size:13.5px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 72%,transparent);text-wrap:pretty">{{ c.body }}</p>
+            <p style="margin:0;font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ t.wForL }} {{ c.client }}, {{ t.wViaL }} {{ c.via }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:66px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:24px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">03</span>
+      <h2 style="font-size:19px;margin:0">{{ t.wStack }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:44px">
+      <sc-for list="{{ stacks }}" as="g" hint-placeholder-count="3">
+        <div style="border-top:1px solid var(--color-divider);padding-top:14px">
+          <h6 style="color:color-mix(in srgb,var(--color-text) 46%,transparent);margin:0 0 12px">{{ g.t }}</h6>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 74%,transparent)"><span style="width:5px;height:5px;border-radius:50%;background:var(--color-accent);display:block;flex:none;transform:translateY(-3px)"></span><span>{{ i }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:66px 60px 0">
+    <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:22px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">04</span>
+      <h2 style="font-size:19px;margin:0">{{ t.wOff }}</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px">
+      <sc-for list="{{ offwork }}" as="o" hint-placeholder-count="3">
+        <div style="border-top:1px solid var(--color-divider);padding-top:14px">
+          <h3 style="font-size:15.5px;margin:0 0 7px">{{ o.t }}</h3>
+          <p style="margin:0;font-size:13px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);text-wrap:pretty">{{ o.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:end;padding:70px 60px 62px">
+    <div style="max-width:560px">
+      <p style="font-size:15.5px;line-height:1.64;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 20px;text-wrap:pretty">{{ t.wClose }}</p>
+      <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary">{{ t.wCta }}</a>
+    </div>
+    <div style="border-top:1px solid var(--color-divider);padding-top:14px">
+      <h6 style="color:color-mix(in srgb,var(--color-text) 42%,transparent);margin:0 0 10px">{{ t.navContact }}</h6>
+      <div style="display:flex;flex-direction:column">
+        <a href="mailto:rodzmateusz@gmail.com" style="text-decoration:none;color:inherit;font-size:13.5px;padding:6px 0" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">rodzmateusz@gmail.com</a>
+        <a href="tel:+393483749656" style="text-decoration:none;color:inherit;font-size:13.5px;padding:6px 0" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">+39 348 3749656</a>
+        <a href="https://www.linkedin.com/in/mateusz-rodz" style="text-decoration:none;color:inherit;font-size:13.5px;padding:6px 0" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">linkedin.com/in/mateusz-rodz</a>
+        <a href="https://github.com/Mate-usz" style="text-decoration:none;color:inherit;font-size:13.5px;padding:6px 0" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">github.com/Mate-usz</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:18px 60px;border-top:1px solid var(--color-divider);font-size:12px;color:color-mix(in srgb,var(--color-text) 42%,transparent)"><span>{{ t.footer }}</span><span style="display:flex;gap:14px"><a href="https://mateuszrodz.com/portfolio" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">Portfolio</a><a href="https://www.linkedin.com/in/mateusz-rodz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">LinkedIn</a><a href="https://github.com/Mate-usz" style="color:inherit;text-decoration:none" style-hover="color:var(--color-accent-200)">GitHub</a></span></div>
+</div>
+</div>
+
+<div class="dv-opt" id="8b">
+<div class="dv-olabel"><a class="dv-oid" href="#8b">8b</a>Percorso - mobile</div>
+<div class="dv-card" style="width:390px">
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--color-divider);position:sticky;top:0;background:var(--color-bg);z-index:2">
+    <div style="display:flex;align-items:center;gap:12px"><span style="font-family:var(--font-heading);font-weight:500;font-size:12.5px">MR</span><div style="display:flex;gap:11px"><a href="#5a" style="text-decoration:none;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navKitchen }}</a><a href="#8b" style="text-decoration:none;font-size:12.5px;color:var(--color-text)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navWork }}</a><a href="#8a" style="text-decoration:none;font-size:12.5px;color:color-mix(in srgb,var(--color-text) 50%,transparent)" style-hover="color:var(--color-accent-200)" style-focus="outline:2px solid var(--color-accent);outline-offset:2px">{{ t.navServices }}</a></div></div>
+    <div style="display:flex;border:1px solid var(--color-divider);border-radius:8px;overflow:hidden">
+      <button onClick="{{ setEn }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ enBg }};color: {{ enFg }}">EN</button>
+      <button onClick="{{ setIt }}" style="border:0;cursor:pointer;font:500 11px var(--font-heading);min-height:32px;padding:0 12px;background: {{ itBg }};color: {{ itFg }}">IT</button>
+    </div>
+  </div>
+
+  <div style="padding:30px 20px 0">
+    <h1 style="font-size:25px;line-height:1.22;margin:0 0 14px;letter-spacing:-.02em">{{ t.wTitle }}</h1>
+    <p style="font-size:15px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 20px;text-wrap:pretty">{{ t.wLead }}</p>
+    <div style="border-left:1px solid var(--color-accent-700);padding-left:14px;margin-bottom:22px">
+      <h6 style="color:var(--color-accent);margin:0 0 6px">{{ t.wRailT }}</h6>
+      <p style="font-size:12.5px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);margin:0">{{ t.wRail }}</p>
+    </div>
+    <a href="mailto:rodzmateusz@gmail.com" class="btn btn-primary btn-block" style="min-height:46px;display:flex;align-items:center;justify-content:center">{{ t.wCta }}</a>
+  </div>
+
+  <div style="padding:32px 20px 0">
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+        <image-slot id="w8b-1" radius="8" style="height:130px" placeholder="heyHuby"></image-slot>
+        <figcaption style="font-size:11.5px;margin:0;color:color-mix(in srgb,var(--color-text) 56%,transparent)">heyHuby</figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+        <image-slot id="w8b-2" radius="8" style="height:130px" placeholder="RSVmotori"></image-slot>
+        <figcaption style="font-size:11.5px;margin:0;color:color-mix(in srgb,var(--color-text) 56%,transparent)">RSVmotori</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div style="padding:38px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">01</span>
+      <h2 style="font-size:17px;margin:0">{{ t.wOwn }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ own }}" as="p" hint-placeholder-count="7">
+        <div style="display:flex;flex-direction:column;gap:5px;padding:14px 0;border-top:1px solid var(--color-divider)">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <span style="font:11.5px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 42%,transparent)">{{ p.when }}</span>
+            <span style="font:11.5px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 34%,transparent)">{{ p.kind }}</span>
+          </div>
+          <h3 style="font-size:16px;margin:0">{{ p.name }}</h3>
+          <p style="margin:0;font-size:13px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 70%,transparent);text-wrap:pretty">{{ p.body }}</p>
+          <p style="margin:0;font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ p.stack }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:38px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">02</span>
+      <h2 style="font-size:17px;margin:0">{{ t.wClients }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
+        <div style="display:flex;flex-direction:column;gap:5px;padding:14px 0;border-top:1px solid var(--color-divider)">
+          <div style="display:flex;justify-content:space-between;gap:10px;align-items:baseline">
+            <span style="font:11.5px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 42%,transparent)">{{ c.when }}</span>
+            <span style="font:11.5px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 34%,transparent)">{{ t.wTeamL }} {{ c.team }}</span>
+          </div>
+          <h3 style="font-size:16px;margin:0">{{ c.name }}</h3>
+          <p style="margin:0;font-size:13px;line-height:1.58;color:color-mix(in srgb,var(--color-text) 70%,transparent);text-wrap:pretty">{{ c.body }}</p>
+          <p style="margin:0;font:11.5px ui-monospace,Menlo,monospace;color:var(--color-accent-300)">{{ t.wForL }} {{ c.client }}, {{ t.wViaL }} {{ c.via }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:38px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">03</span>
+      <h2 style="font-size:17px;margin:0">{{ t.wStack }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <sc-for list="{{ stacks }}" as="g" hint-placeholder-count="3">
+        <div style="border-top:1px solid var(--color-divider);padding-top:12px">
+          <h6 style="color:color-mix(in srgb,var(--color-text) 46%,transparent);margin:0 0 10px">{{ g.t }}</h6>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+              <div style="display:flex;gap:10px;align-items:baseline;font-size:13.5px;color:color-mix(in srgb,var(--color-text) 74%,transparent)"><span style="width:5px;height:5px;border-radius:50%;background:var(--color-accent);display:block;flex:none;transform:translateY(-3px)"></span><span>{{ i }}</span></div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:38px 20px 0">
+    <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:16px">
+      <span style="font:11px ui-monospace,Menlo,monospace;color:var(--color-accent);letter-spacing:.08em">04</span>
+      <h2 style="font-size:17px;margin:0">{{ t.wOff }}</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <sc-for list="{{ offwork }}" as="o" hint-placeholder-count="3">
+        <div style="border-top:1px solid var(--color-divider);padding-top:12px">
+          <h3 style="font-size:15px;margin:0 0 6px">{{ o.t }}</h3>
+          <p style="margin:0;font-size:13px;line-height:1.6;color:color-mix(in srgb,var(--color-text) 66%,transparent);text-wrap:pretty">{{ o.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="padding:34px 20px 0">
+    <p style="font-size:14.5px;line-height:1.62;color:color-mix(in srgb,var(--color-text) 76%,transparent);margin:0 0 16px;text-wrap:pretty">{{ t.wClose }}</p>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--color-divider)">
+      <a href="mailto:rodzmateusz@gmail.com" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblEmail }}</span><span style="font-size:13.5px">rodzmateusz@gmail.com</span>
+      </a>
+      <a href="tel:+393483749656" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.lblPhone }}</span><span style="font-size:13.5px">+39 348 3749656</span>
+      </a>
+      <a href="https://www.linkedin.com/in/mateusz-rodz" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">LINKEDIN</span><span style="font-size:13.5px">mateusz-rodz</span>
+      </a>
+      <a href="https://github.com/Mate-usz" style="text-decoration:none;color:inherit;padding:13px 0;border-bottom:1px solid var(--color-divider);display:flex;justify-content:space-between;gap:10px;align-items:baseline;min-height:46px" style-hover="color:var(--color-accent-200)">
+        <span style="font:11px ui-monospace,Menlo,monospace;color:color-mix(in srgb,var(--color-text) 40%,transparent)">GITHUB</span><span style="font-size:13.5px">Mate-usz</span>
+      </a>
+    </div>
+  </div>
+
+  <div style="padding:22px 20px 26px;font-size:11.5px;color:color-mix(in srgb,var(--color-text) 40%,transparent)">{{ t.footer }}</div>
+</div>
+</div>
+
+</div>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;it&quot;,&quot;en&quot;],&quot;default&quot;:&quot;it&quot;,&quot;tsType&quot;:&quot;'it' | 'en'&quot;,&quot;section&quot;:&quot;Lingua&quot;},&quot;showPrices&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Servizi&quot;},&quot;showPremiumBadge&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Servizi&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { lang: props.defaultLang || 'it' };
+  }
+  renderVals() {
+    const en = {
+      navWork: 'Work', navServices: 'Services', navKitchen: 'Kitchen', navContact: 'Contact',
+      heroKicker: 'Perugia, Italy - frontend for clients, kitchen on Saturdays',
+      heroTitle: 'Mateusz Rodz',
+      heroLead: 'Frontend developer since 2022 - banking portals, e-commerce, my own products. Since 2022 I also bake: pizza every Saturday, laminated dough and naturally leavened bread the rest of the week.',
+      heroTitleB: 'I build web apps.\nOn Saturdays I bake.',
+      heroLeadB: 'Frontend work in Italian consultancy since 2022, then on my own. Two years of dough - pizza napoletana, croissants, sourdough - logged bake by bake. Both are the same job: get the details right, ship on time.',
+      heroLeadC: 'Frontend developer, in Italian consultancy since 2022 and independent since 2024, now splitting my week between clients and a home bakery. Three tracks below - pick one.',
+      ctaKitchen: 'See the bakes', ctaWork: 'See the work',
+      doorsLabel: 'Three things I do',
+      kitK: '01 - Kitchen', kitT: 'Bread, pizza, pastry', kitB: 'Pizza napoletana on a Saturday, laminated dough and naturally leavened loaves the rest of the week. Documented properly: flour, hydration, ferment, oven.', kitCta: 'Culinary portfolio',
+      workK: '02 - Career', workT: 'Work & experience', workB: 'Portals for Unicredit, AXA, BNP and ITAS in consultancy, then web apps, Shopify stores and games on my own.', workCta: 'Experience & projects',
+      svcK: '03 - Freelance', svcT: 'Services for small business', svcB: 'Bug fixes, speed work and landing pages delivered in 48-72 hours. Direct with me, no agency in between.', svcCta: 'Services & pricing',
+      yrs: 'years', proof: 'Experience from', stat2: 'client projects shipped', stat3: 'typical delivery',
+      kitchenHeadline: 'The Saturday practice',
+      kitchenSub: 'A log, not a highlight reel - every bake with its dough, its timing and what I got wrong. Two years of Saturdays, one oven, no shortcuts.',
+      available: 'Open to kitchen work in Umbria - weekends & stages',
+      ledgerStatus: 'Available - freelance & kitchen',
+      thTrack: 'Track', thSince: 'Since', thWhat: 'What it is', thGo: 'Where it goes',
+      logLabel: 'Bake log - latest', recentLabel: 'Recent bakes',
+      closeTitle: 'Looking for a hand in a bakery or kitchen',
+      closeSub: 'Weekends, evenings, or a full stage. I show up early and clean as I go.',
+      closeCta: 'Get in touch',
+      footer: '© 2026 mateuszrodz.com',
+      bioA: 'Frontend developer in Perugia. Two years in consultancy on portals for Unicredit, AXA, BNP and ITAS, in teams of three to twelve people. Since 2024 I work for myself: web apps, Shopify stores and a few games.',
+      bioB: 'Outside work I bake and build games. Pizza napoletana on Saturdays, GameJams when they come round. Same habit in all of it: get the details right and hand it over finished.',
+      seekTitle: 'What are you looking for?',
+      seekSub: 'Three doors. Take the one that fits.',
+      cSvcT: 'Services', cSvcB: 'Bug fixes, performance and landing pages, delivered in 48-72 hours.', cSvcM: 'from €50',
+      cExpT: 'Experience', cExpB: 'Banking and insurance portals in consultancy, then my own projects since 2024.', cExpM: '2022 - 2026',
+      cCulT: 'Culinary', cCulB: 'Pizza, pastry and bread, logged bake by bake. Open to kitchen work.', cCulM: 'since 2022',
+      cta: 'Open', hire: 'Hire me', contactB: 'Contact',
+      kTitle: 'Bread, pizza and pastry',
+      kLead: 'I bake at home, seriously and on a schedule: pizza napoletana every Saturday, laminated dough and naturally leavened bread through the week. Two years in, self-taught, everything logged. I am looking for a kitchen where I can learn the professional side properly.',
+      kAvailTitle: 'Available',
+      kAvail: 'Weekends, early mornings and evenings · full stage possible · Perugia and around, will travel in Umbria',
+      kWhat: 'What I make',
+      kCat1: 'Pizza napoletana', kCat1S: 'Weekly · 65% hydration · 48-72h cold ferment · Caputo Nuvola · home dome oven, 430°C', kCat1B: 'The Saturday fixture. Two years of the same dough, adjusted every week - cornicione, spotting, bake time.',
+      kCat2: 'Laminated dough', kCat2S: 'Croissants · brioche feuilletée · pain au chocolat · 3 turns, 27 layers · 40% butter', kCat2B: 'The one that taught me temperature discipline. Lamination in a home kitchen means working cold and working fast.',
+      kCat3: 'Naturally leavened bread', kCat3S: 'Pain de campagne · 78% hydration · 20h bulk · stiff starter, fed daily since 2023', kCat3B: 'Open crumb, dark bake. I keep the starter alive and note every loaf against the last one.',
+      kGallery: 'Recent bakes',
+      kLog: 'Bake log',
+      kLogNote: 'I keep notes on every bake - flour, hydration, timings, what went wrong. Here is the last month.',
+      wTitle: 'Frontend, from banking portals to projects of my own',
+      wLead: 'I started in consultancy on portals for Unicredit, AXA, BNP and ITAS, inside teams of three to twelve people. Since 2024 I work for myself: web apps, e-commerce, and a few games. Based in Perugia, available remotely.',
+      wRailT: 'Details', wRail: 'Perugia, Italy. Italian native, Polish as a family language, English B1-B2. Open to frontend contracts, remote or here.',
+      wOwn: 'On my own, since 2024', wClients: 'In consultancy, 2022 to 2024', wStack: 'Stack', wOff: 'Outside work',
+      wTeamL: 'team', wSolo: 'solo', wForL: 'client', wViaL: 'through',
+      wClose: 'The full CV is a PDF if you need it. Otherwise write to me and I will answer within a day.',
+      wCta: 'Get in touch',
+      sTitle: 'Frontend work for small businesses',
+      sLead: 'I build and fix websites for people who run a business and have nobody in-house to do it. You deal with me directly, start to finish. Small jobs are usually done in two or three days.',
+      sRailT: 'How I work', sRail: 'I answer within a day. After a short call you get one fixed price, in writing. Invoiced with Italian P.IVA.',
+      sWhat: 'What you can hire me for', sHow: 'How it works',
+      sProof: 'Recent jobs', sProofNote: 'Real jobs, not demos: a construction machinery shop on Shopify, a handmade skateboard store with Stripe payments, and a web app that runs a page per client.',
+      sNo: 'What I don\u2019t take on',
+      sNoBody: 'I do not do monthly SEO, logos, or digging through plugins on a site someone else built. If it is outside what I am good at I will say so and send you to someone better. Quicker for both of us.',
+      sCta: 'Ask for a quote', sDeliv: 'delivery',
+      sJob1: 'RSVmotori', sJob1S: 'Shopify, dynamic forms at signup', sJob2: 'Kobocraft', sJob2S: 'Stripe, board customiser', sJob3: 'heyHuby', sJob3S: 'Next.js, a page per client',
+      lblEmail: 'EMAIL', lblPhone: 'PHONE',
+      kLogFoot: 'Full notebook goes back to 2023 - happy to bring it.',
+      kAsk: 'What I am looking for',
+      kAskBody: 'A place in a bakery, pizzeria or pastry kitchen - part-time, weekends, or a stage. I am not asking to be paid to learn on your time: I show up early, clean as I go, and I already know how to handle dough and a timetable. Coming from software, I am also happy to fix your website while I am at it.',
+      kCta: 'Write to me',
+      kSkills: 'Where I am solid', kSkillsL: ['Dough by hand and in a mixer', 'Reading a fermentation, not a clock', 'Lamination and shaping', 'Wood and gas dome ovens', 'Working clean, mise en place', 'Weighing and scaling recipes'],
+      kLearn: 'What I want to learn', kLearnL: ['Service rhythm and volume', 'Professional deck and rack ovens', 'Viennoiserie at scale', 'Costing and waste control'],
+      kThead: ['Date', 'Bake', 'Dough', 'Note']
+    };
+    const it = {
+      navWork: 'Percorso', navServices: 'Servizi', navKitchen: 'Cucina', navContact: 'Contatti',
+      heroKicker: 'Perugia - frontend per i clienti, e il sabato in cucina',
+      heroTitle: 'Mateusz Rodz',
+      heroLead: 'Sviluppatore frontend dal 2022 - portali bancari, e-commerce, prodotti miei. Dal 2022 impasto: pizza ogni sabato, sfogliati e pane a lievitazione naturale durante la settimana.',
+      heroTitleB: 'Costruisco web app.\nIl sabato impasto.',
+      heroLeadB: 'Frontend in consulenza italiana dal 2022, poi per conto mio. Due anni di impasti - pizza napoletana, croissant, pane a lievito madre - annotati uno per uno. È lo stesso mestiere: cura dei dettagli e consegne puntuali.',
+      heroLeadC: 'Sviluppatore frontend, in consulenza dal 2022 e indipendente dal 2024, ora divido la settimana tra i clienti e il forno di casa. Tre percorsi qui sotto - scegline uno.',
+      ctaKitchen: 'Guarda gli impasti', ctaWork: 'Guarda i lavori',
+      doorsLabel: 'Tre cose che faccio',
+      kitK: '01 - Cucina', kitT: 'Pane, pizza, pasticceria', kitB: 'Pizza napoletana il sabato, sfogliati e pani a lievitazione naturale il resto della settimana. Tutto documentato: farina, idratazione, lievitazione, forno.', kitCta: 'Portfolio culinario',
+      workK: '02 - Percorso', workT: 'Esperienza e progetti', workB: 'Portali per Unicredit, AXA, BNP e ITAS in consulenza, poi webapp, e-commerce su Shopify e giochi per conto mio.', workCta: 'Esperienza e progetti',
+      svcK: '03 - Freelance', svcT: 'Servizi per piccole attività', svcB: 'Correzione bug, ottimizzazione performance e landing page in 48-72 ore. Parli direttamente con me, senza agenzie.', svcCta: 'Servizi e prezzi',
+      yrs: 'anni', proof: 'Esperienza in', stat2: 'progetti consegnati', stat3: 'consegna media',
+      kitchenHeadline: 'La pratica del sabato',
+      kitchenSub: 'Un registro, non una vetrina - ogni impasto con la sua ricetta, i suoi tempi e quello che ho sbagliato. Due anni di sabati, un forno, nessuna scorciatoia.',
+      available: 'Disponibile per lavoro in cucina in Umbria - weekend e stage',
+      ledgerStatus: 'Disponibile - freelance e cucina',
+      thTrack: 'Percorso', thSince: 'Dal', thWhat: "Cos'è", thGo: 'Dove porta',
+      logLabel: 'Registro impasti - ultimi', recentLabel: 'Impasti recenti',
+      closeTitle: 'Cerco una mano da dare in forno o in cucina',
+      closeSub: 'Weekend, sere, o uno stage pieno. Arrivo presto e pulisco mentre lavoro.',
+      closeCta: 'Scrivimi',
+      footer: '© 2026 mateuszrodz.com',
+      bioA: 'Sviluppatore frontend a Perugia. Due anni in consulenza sui portali di Unicredit, AXA, BNP e ITAS, in team dalle tre alle dodici persone. Dal 2024 lavoro per conto mio: webapp, e-commerce su Shopify e qualche gioco.',
+      bioB: 'Fuori dal lavoro impasto e programmo giochi. Pizza napoletana il sabato, GameJam quando capita. La stessa abitudine in tutto: curare i dettagli e consegnare finito.',
+      seekTitle: 'Cosa stai cercando?',
+      seekSub: 'Tre porte. Prendi quella che ti serve.',
+      cSvcT: 'Servizi', cSvcB: 'Correzione bug, performance e landing page, consegnate in 48-72 ore.', cSvcM: 'da €50',
+      cExpT: 'Esperienza', cExpB: 'Portali bancari e assicurativi in consulenza, poi progetti miei dal 2024.', cExpM: '2022 - 2026',
+      cCulT: 'Cucina', cCulB: 'Pizza, pasticceria e pane, annotati impasto per impasto. Disponibile per lavoro in cucina.', cCulM: 'dal 2022',
+      cta: 'Apri', hire: 'Lavora con me', contactB: 'Contatti',
+      kTitle: 'Pane, pizza e pasticceria',
+      kLead: 'Impasto a casa, seriamente e con un calendario: pizza napoletana ogni sabato, sfogliati e pane a lievitazione naturale durante la settimana. Due anni, da autodidatta, tutto annotato. Cerco una cucina dove imparare il mestiere per davvero.',
+      kAvailTitle: 'Disponibilità',
+      kAvail: 'Weekend, mattine presto e sere · stage completo possibile · Perugia e dintorni, mi muovo in Umbria',
+      kWhat: 'Cosa faccio',
+      kCat1: 'Pizza napoletana', kCat1S: 'Ogni settimana · 65% idratazione · 48-72h a freddo · Caputo Nuvola · forno a cupola, 430°C', kCat1B: 'L’appuntamento del sabato. Due anni con lo stesso impasto, corretto ogni volta - cornicione, leopardatura, tempi di cottura.',
+      kCat2: 'Sfogliati', kCat2S: 'Croissant · brioche feuilletée · pain au chocolat · 3 pieghe, 27 strati · 40% burro', kCat2B: 'Quello che mi ha insegnato la disciplina delle temperature. Sfogliare in casa vuol dire lavorare freddo e veloce.',
+      kCat3: 'Pane a lievitazione naturale', kCat3S: 'Pane di campagna · 78% idratazione · 20h di massa · lievito madre solido, rinfrescato ogni giorno dal 2023', kCat3B: 'Alveolatura aperta, cottura scura. Tengo vivo il lievito e annoto ogni pagnotta rispetto alla precedente.',
+      kGallery: 'Impasti recenti',
+      kLog: 'Registro impasti',
+      kLogNote: 'Annoto ogni impasto - farina, idratazione, tempi, cosa è andato storto. Questo è l’ultimo mese.',
+      wTitle: 'Frontend, dai portali bancari ai progetti miei',
+      wLead: 'Ho iniziato in consulenza sui portali di Unicredit, AXA, BNP e ITAS, in team dalle tre alle dodici persone. Dal 2024 lavoro per conto mio: webapp, e-commerce e qualche gioco. Vivo a Perugia, disponibile da remoto.',
+      wRailT: 'Dati', wRail: 'Perugia. Italiano madrelingua, polacco lingua etnica, inglese B1-B2. Disponibile per contratti frontend, da remoto o qui.',
+      wOwn: 'Per conto mio, dal 2024', wClients: 'In consulenza, dal 2022 al 2024', wStack: 'Stack', wOff: 'Fuori dal lavoro',
+      wTeamL: 'team', wSolo: 'individuale', wForL: 'cliente', wViaL: 'per',
+      wClose: 'Il curriculum completo \u00e8 in PDF, se ti serve. Altrimenti scrivimi e rispondo entro un giorno.',
+      wCta: 'Scrivimi',
+      sTitle: 'Sviluppo frontend per piccole attivit\u00e0',
+      sLead: 'Costruisco e sistemo siti per chi ha un\u2019attivit\u00e0 e nessuno in casa che lo faccia. Parli con me dall\u2019inizio alla fine. I lavori piccoli sono pronti in due o tre giorni.',
+      sRailT: 'Come lavoro', sRail: 'Rispondo entro un giorno. Dopo una call breve ti do un prezzo fisso, scritto. Fattura con P.IVA.',
+      sWhat: 'Cosa puoi affidarmi', sHow: 'Come funziona',
+      sProof: 'Lavori recenti', sProofNote: 'Lavori veri, non demo: uno shop di macchinari edili su Shopify, uno di skateboard artigianali con pagamenti Stripe, e una webapp che gestisce una pagina per ogni cliente.',
+      sNo: 'Cosa non faccio',
+      sNoBody: 'Niente SEO a canone, niente loghi, niente plugin da scavare su siti fatti da altri. Se \u00e8 fuori da quello che faccio bene te lo dico e ti mando da qualcuno pi\u00f9 adatto. Pi\u00f9 veloce per tutti e due.',
+      sCta: 'Chiedi un preventivo', sDeliv: 'consegna',
+      sJob1: 'RSVmotori', sJob1S: 'Shopify, form dinamici in registrazione', sJob2: 'Kobocraft', sJob2S: 'Stripe, configuratore della tavola', sJob3: 'heyHuby', sJob3S: 'Next.js, una pagina per cliente',
+      lblEmail: 'EMAIL', lblPhone: 'TELEFONO',
+      kLogFoot: 'Il quaderno completo parte dal 2023 - posso portarlo.',
+      kAsk: 'Cosa cerco',
+      kAskBody: 'Un posto in un forno, in pizzeria o in pasticceria - part-time, weekend, o uno stage. Non chiedo di essere pagato per imparare sul vostro tempo: arrivo presto, pulisco mentre lavoro e so già gestire un impasto e una tabella di marcia. Vengo dal software, quindi volentieri vi sistemo anche il sito.',
+      kCta: 'Scrivimi',
+      kSkills: 'Dove sono solido', kSkillsL: ['Impasto a mano e in planetaria', 'Leggere una lievitazione, non l’orologio', 'Sfogliatura e formatura', 'Forni a cupola, legna e gas', 'Lavorare pulito, mise en place', 'Pesare e scalare le ricette'],
+      kLearn: 'Cosa voglio imparare', kLearnL: ['Il ritmo del servizio e i volumi', 'Forni professionali a piani e rotativi', 'Viennoiserie in quantità', 'Food cost e gestione degli sprechi'],
+      kThead: ['Data', 'Impasto', 'Impasto tecnico', 'Nota']
+    };
+    const isIt = this.state.lang === 'it';
+    const showPrices = this.props.showPrices !== false;
+    const showPremium = this.props.showPremiumBadge !== false;
+    const t = isIt ? it : en;
+    const on = { bg: 'var(--color-accent)', fg: '#161826' };
+    const off = { bg: 'transparent', fg: 'color-mix(in srgb, var(--color-text) 55%, transparent)' };
+    const decorate = (list) => list.map(p => ({ ...p, price: showPrices ? p.price : '', premium: showPremium ? p.premium : null }));
+    return {
+      t, isIt,
+      setEn: () => this.setState({ lang: 'en' }),
+      setIt: () => this.setState({ lang: 'it' }),
+      enBg: isIt ? off.bg : on.bg, enFg: isIt ? off.fg : on.fg,
+      itBg: isIt ? on.bg : off.bg, itFg: isIt ? on.fg : off.fg,
+      prices: isIt
+        ? [{ name: 'Fix & Boost', price: 'da €50' }, { name: 'Landing page', price: 'da €300' }, { name: 'Landing + prenotazioni', price: 'da €500' }]
+        : [{ name: 'Fix & Boost', price: 'from €50' }, { name: 'Landing page', price: 'from €300' }, { name: 'Landing + bookings', price: 'from €500' }],
+      cats: [
+        { title: t.kCat1, spec: t.kCat1S, body: t.kCat1B },
+        { title: t.kCat2, spec: t.kCat2S, body: t.kCat2B },
+        { title: t.kCat3, spec: t.kCat3S, body: t.kCat3B }
+      ],
+      gallery: isIt
+        ? [{ c: 'Pizza napoletana', s: '72h a freddo' }, { c: 'Croissant', s: '27 strati' }, { c: 'Pane di campagna', s: '78% idr' }, { c: 'Brioche feuilletée', s: '40% burro' }, { c: 'Focaccia', s: '85% idr' }, { c: 'Baguette', s: 'poolish 12h' }, { c: 'Pain au chocolat', s: 'secondo tentativo' }, { c: 'Pane integrale', s: 'farina macinata a pietra' }]
+        : [{ c: 'Pizza napoletana', s: '72h cold ferment' }, { c: 'Croissants', s: '27 layers' }, { c: 'Pain de campagne', s: '78% hydration' }, { c: 'Brioche feuilletée', s: '40% butter' }, { c: 'Focaccia', s: '85% hydration' }, { c: 'Baguettes', s: '12h poolish' }, { c: 'Pain au chocolat', s: 'second attempt' }, { c: 'Wholemeal loaf', s: 'stoneground flour' }],
+      galleryLead: (isIt
+        ? [{ c: 'Pizza napoletana', s: '72h a freddo' }, { c: 'Croissant', s: '27 strati' }, { c: 'Pane di campagna', s: '78% idr' }]
+        : [{ c: 'Pizza napoletana', s: '72h cold ferment' }, { c: 'Croissants', s: '27 layers' }, { c: 'Pain de campagne', s: '78% hydration' }]),
+      galleryRest: (isIt
+        ? [{ c: 'Brioche feuilletée', s: '40% burro' }, { c: 'Focaccia', s: 'teglia, 80% idr' }, { c: 'Pain au chocolat', s: 'burro Isigny' }, { c: 'Baguette', s: 'poolish 12h' }, { c: 'Ciabatta', s: '85% idr' }]
+        : [{ c: 'Brioche feuilletée', s: '40% butter' }, { c: 'Focaccia', s: 'pan, 80% hydration' }, { c: 'Pain au chocolat', s: 'Isigny butter' }, { c: 'Baguette', s: '12h poolish' }, { c: 'Ciabatta', s: '85% hydration' }]),
+      own: isIt
+        ? [{ when: '12.2025 - in corso', name: 'heyHuby', kind: 'individuale', body: 'Webapp che raccoglie in un unico posto le informazioni importanti di un cliente, di un brand o di una società. Ogni cliente ha la sua pagina, la può puntare sul proprio dominio e personalizzarne interamente il contenuto.', stack: 'Next.js, TypeScript, Supabase' },
+           { when: '04.2026 - 05.2026', name: 'Blog AI', kind: 'individuale', body: 'App che aggancia domini diversi con controlli sui record DNS e genera il certificato SSL con certbot. Tema personalizzabile e articoli scritti a mano o generati dando un argomento alle API di OpenAI.', stack: 'Next.js, Node, OpenAI, certbot' },
+           { when: '03.2026 - 04.2026', name: 'DailyUs', kind: 'progetto personale', body: 'App mobile pensata per dare qualcosa in più alle coppie. Ho usato l’IA per capire la direzione da prendere e per implementare alcune soluzioni.', stack: 'mobile, IA' },
+           { when: '07.2025 - 08.2025', name: 'RSVmotori', kind: 'individuale', body: 'Shop di macchinari edili su Shopify, con elementi custom e una app con form dinamici per raccogliere in registrazione informazioni che Shopify di base non permette.', stack: 'Shopify, Liquid, app custom' },
+           { when: '02.2025 - 06.2025', name: 'Advergame', kind: 'individuale', body: 'Adventure puzzle 2D breve per l’uscita di un disco, con quattro easter egg per i fan che rimandano ai vecchi album.', stack: 'game dev 2D' },
+           { when: '03.2024 - 05.2024', name: 'Kobocraft', kind: 'individuale', body: 'Shop di skateboard artigianali dove il cliente personalizza la tavola con drag and drop di sticker e il codice dei propri NFT. Ho migliorato stabilità e tempi di caricamento, integrato Stripe e sistemato parte della user experience senza stravolgere il design del cliente.', stack: 'frontend, Stripe' },
+           { when: '02.2024 - 03.2024', name: 'Tetris mobile multiplayer', kind: 'individuale', body: 'Ho lavorato al gioco mobile in Unity3D: risoluzione di bug e comunicazione con i server rivista per abbassare la latenza.', stack: 'Unity3D' }]
+        : [{ when: '12.2025 - ongoing', name: 'heyHuby', kind: 'solo', body: 'A web app that gathers everything important about a client, a brand or a company in one place. Each client gets their own page, can point it at their own domain and customise the content entirely.', stack: 'Next.js, TypeScript, Supabase' },
+           { when: '04.2026 - 05.2026', name: 'Blog AI', kind: 'solo', body: 'An app that hooks up multiple domains with DNS record checks and issues the SSL certificate through certbot. Themeable, with articles written by hand or generated from a topic through the OpenAI API.', stack: 'Next.js, Node, OpenAI, certbot' },
+           { when: '03.2026 - 04.2026', name: 'DailyUs', kind: 'personal project', body: 'A mobile app meant to give couples something extra. I used AI to work out the direction and to implement some of the solutions.', stack: 'mobile, AI' },
+           { when: '07.2025 - 08.2025', name: 'RSVmotori', kind: 'solo', body: 'A construction machinery shop on Shopify with custom elements and an app with dynamic forms, so registration could collect information Shopify does not handle on its own.', stack: 'Shopify, Liquid, custom app' },
+           { when: '02.2025 - 06.2025', name: 'Advergame', kind: 'solo', body: 'A short 2D adventure puzzle for an album release, with four easter eggs pointing fans back to older records.', stack: '2D game dev' },
+           { when: '03.2024 - 05.2024', name: 'Kobocraft', kind: 'solo', body: 'A handmade skateboard shop where customers build their own board by dragging stickers and entering their NFT codes. I improved stability and load times, integrated Stripe, and cleaned up parts of the experience without touching the client’s design.', stack: 'frontend, Stripe' },
+           { when: '02.2024 - 03.2024', name: 'Tetris mobile multiplayer', kind: 'solo', body: 'I worked on this Unity3D mobile game: bug fixing and reworked server communication to bring latency down.', stack: 'Unity3D' }],
+      clients: isIt
+        ? [{ when: '10.2023 - 05.2024', name: 'Portale Unicredit', team: '12', client: 'Unicredit Czechia', via: 'Be', body: 'Portale con più tipi di utente, messaggistica interna, gestione clienti e un sistema di notifiche e messaggi push multilingua.' },
+           { when: '05.2023 - 09.2023', name: 'Migrazione portale', team: '5', client: 'ITAS / Reply', via: 'Lipari Technology', body: 'Parte del team che ha migrato il portale su un frontend nuovo in React.' },
+           { when: '02.2023 - 09.2023', name: 'Sistema notifiche', team: '3', client: 'AXA / Reply', via: 'Lipari Technology', body: 'Sviluppo frontend del sistema di notifiche, insieme alla manutenzione dell’intero codice.' },
+           { when: '02.2022 - 09.2023', name: 'TPV', team: '3', client: 'BNP / Reply', via: 'Lipari Technology', body: 'CRM per la gestione e la compilazione di anagrafiche, clienti e contratti. La parte più tosta è stata una sezione con compilazione dinamica dei beneficiari, da uno a N, ognuno con la propria validazione a runtime dentro un form a più sezioni.' }]
+        : [{ when: '10.2023 - 05.2024', name: 'Unicredit portal', team: '12', client: 'Unicredit Czechia', via: 'Be', body: 'A portal serving several user types, with internal messaging, client management and a multilingual notification and push system.' },
+           { when: '05.2023 - 09.2023', name: 'Portal migration', team: '5', client: 'ITAS / Reply', via: 'Lipari Technology', body: 'Part of the team that migrated the portal onto a new React frontend.' },
+           { when: '02.2023 - 09.2023', name: 'Notification system', team: '3', client: 'AXA / Reply', via: 'Lipari Technology', body: 'Frontend development on the notification system, alongside maintenance of the whole codebase.' },
+           { when: '02.2022 - 09.2023', name: 'TPV', team: '3', client: 'BNP / Reply', via: 'Lipari Technology', body: 'A CRM for managing and filling in records for clients and contracts. The hardest part was a section with dynamic entry of beneficiaries, one to N, each with its own runtime validation inside a multi-section form.' }],
+      stacks: isIt
+        ? [{ t: 'Frontend', items: ['React, Next.js', 'Angular', 'TypeScript, JavaScript', 'CSS, SCSS, TailwindCSS'] },
+           { t: 'Backend', items: ['C#, Node.js', 'Java, Spring Boot', 'REST API', 'MySQL, MongoDB, Supabase'] },
+           { t: 'Strumenti e metodo', items: ['Git, GitHub', 'CI/CD', 'Agile, Scrum', 'Unity3D, GameMaker'] }]
+        : [{ t: 'Frontend', items: ['React, Next.js', 'Angular', 'TypeScript, JavaScript', 'CSS, SCSS, TailwindCSS'] },
+           { t: 'Backend', items: ['C#, Node.js', 'Java, Spring Boot', 'REST APIs', 'MySQL, MongoDB, Supabase'] },
+           { t: 'Tools and method', items: ['Git, GitHub', 'CI/CD', 'Agile, Scrum', 'Unity3D, GameMaker'] }],
+      offwork: isIt
+        ? [{ t: 'Videogiochi', body: 'Nel tempo libero programmo giochi, miei o rifacendo meccaniche che mi hanno colpito. Partecipo alle GameJam quando posso, quarantotto ore per fare un gioco da zero su un tema dato all’ultimo. Ho pubblicato vari titoli sugli store mobile e su itch.io, con Unity3D o GameMaker, e da poco ho ripreso il C++ per farmi un piccolo engine 2D.' },
+           { t: 'Creator', body: 'Quando mi viene un’idea che vale la pena raccontare, ne faccio un video su YouTube.' },
+           { t: 'Carte collezionabili', body: 'Da tre anni ho un piccolo store dove vendo le mie vecchie collezioni di Pokémon e qualche box di Magic.' }]
+        : [{ t: 'Games', body: 'In my own time I build games, either mine or rebuilding mechanics that stuck with me. I join GameJams when I can: forty-eight hours to make a game from nothing on a theme handed out minutes before. Several titles are published on mobile stores and itch.io, built in Unity3D or GameMaker, and I recently picked C++ back up to write myself a small 2D engine.' },
+           { t: 'Creator', body: 'When an idea is worth telling, I make a video about it on YouTube.' },
+           { t: 'Trading cards', body: 'For three years now I have run a small store selling off my old Pokémon collections and a few Magic boxes.' }],
+      packages: decorate(isIt
+        ? [{ name: 'Fix & Boost', price: 'da \u20ac50', body: 'Qualcosa \u00e8 rotto o lento. Trovo la causa, la sistemo e ti spiego cos\u2019era senza giri di parole.', spec: 'bug, velocit\u00e0, layout mobile', delivery: '2 giorni' },
+           { name: 'Landing page', price: 'da \u20ac300', body: 'Una pagina che spiega cosa fai e porta la gente a chiamare o prenotare. Ti aiuto anche a mettere in ordine i testi.', spec: 'design e sviluppo, responsive, analytics', delivery: '5 giorni' },
+           { name: 'Landing con prenotazioni', price: 'da \u20ac500', body: 'La pagina pi\u00f9 un sistema di prenotazione che funziona, collegato al tuo calendario o alla tua mail.', spec: 'form, calendario, notifiche email', delivery: '8 giorni' },
+           { name: 'Store Shopify', price: 'da \u20ac900', body: 'Un negozio che vende davvero. Tema costruito sul tuo marchio, prodotti caricati come si deve, pagamenti e spedizioni configurati. Poi ti insegno a gestirlo da solo.', spec: 'tema Shopify, import prodotti, pagamenti, spedizioni', delivery: '3 settimane', premium: 'Premium' }]
+        : [{ name: 'Fix & Boost', price: 'from \u20ac50', body: 'Something is broken or slow. I find the cause, fix it, and tell you what it was without the jargon.', spec: 'bugs, speed, mobile layout', delivery: '2 days' },
+           { name: 'Landing page', price: 'from \u20ac300', body: 'One page that explains what you do and gets people to call or book. I help you get the words in order too.', spec: 'design and build, responsive, analytics', delivery: '5 days' },
+           { name: 'Landing with bookings', price: 'from \u20ac500', body: 'The page plus a booking system that works, wired to your calendar or your inbox.', spec: 'forms, calendar, email alerts', delivery: '8 days' },
+           { name: 'Shopify store', price: 'from \u20ac900', body: 'A shop that actually sells. Theme built around your brand, products loaded properly, payments and shipping set up. Then I teach you to run it yourself.', spec: 'Shopify theme, product import, payments, shipping', delivery: '3 weeks', premium: 'Premium' }]),
+      steps: isIt
+        ? [{ n: '01', title: 'Una call di venti minuti', body: 'Mi racconti il problema. Ti chiedo cosa deve fare il sito per te. Non serve un brief scritto.' },
+           { n: '02', title: 'Un prezzo fisso', body: 'Perimetro scritto e un solo numero, lo stesso giorno. Nessuna sorpresa a ore.' },
+           { n: '03', title: 'Costruisco, tu lo vedi online', body: 'Un link che apri dal telefono, aggiornato mentre lavoro.' },
+           { n: '04', title: 'Consegna', body: 'Tutto sui tuoi account, non sui miei. Ti spiego come cambiare i testi da solo.' }]
+        : [{ n: '01', title: 'A twenty-minute call', body: 'You tell me the problem. I ask what the site has to do for you. No written brief needed.' },
+           { n: '02', title: 'A fixed price', body: 'Written scope and one number, same day. No hourly surprises.' },
+           { n: '03', title: 'I build, you watch it live', body: 'A link you can open from your phone, updated as I go.' },
+           { n: '04', title: 'Handover', body: 'Everything in your accounts, not mine. I show you how to change the text yourself.' }],
+      log: isIt
+        ? [{ date: '18.07', name: 'Pizza napoletana', dough: '65% idr · 72h freddo · Nuvola', note: 'Cornicione migliore finora, forno a 440°C' }, { date: '11.07', name: 'Croissant', dough: '3 pieghe · 40% burro', note: 'Burro uscito in cottura: sfogliatura troppo calda' }, { date: '04.07', name: 'Pane di campagna', dough: '78% idr · 20h di massa', note: 'Alveolatura aperta, crosta un po’ chiara' }, { date: '27.06', name: 'Brioche feuilletée', dough: '40% burro · 18h in frigo', note: 'Ottima, prossima volta stampi più piccoli' }, { date: '20.06', name: 'Focaccia', dough: '85% idr · teglia', note: 'Sale grosso in superficie, sottile al centro' }]
+        : [{ date: '18.07', name: 'Pizza napoletana', dough: '65% hydr · 72h cold · Nuvola', note: 'Best cornicione yet, oven at 440°C' }, { date: '11.07', name: 'Croissants', dough: '3 turns · 40% butter', note: 'Butter leaked - laminated too warm' }, { date: '04.07', name: 'Pain de campagne', dough: '78% hydr · 20h bulk', note: 'Open crumb, crust a little pale' }, { date: '27.06', name: 'Brioche feuilletée', dough: '40% butter · 18h retard', note: 'Very good, smaller tins next time' }, { date: '20.06', name: 'Focaccia', dough: '85% hydr · tray', note: 'Flaky salt on top, thin in the middle' }],
+      doors: [
+        { title: t.cSvcT, body: t.cSvcB, meta: t.cSvcM, go: '/services' },
+        { title: t.cExpT, body: t.cExpB, meta: t.cExpM, go: '/work' },
+        { title: t.cCulT, body: t.cCulB, meta: t.cCulM, go: '/kitchen' }
+      ],
+      tracks: [
+        { n: '01', title: t.kitT, body: t.kitB, meta: t.kitCta },
+        { n: '02', title: t.workT, body: t.workB, meta: t.workCta },
+        { n: '03', title: t.svcT, body: t.svcB, meta: t.svcCta }
+      ],
+      ledger: [
+        { n: '01', title: t.kitT, since: '2022', body: t.kitB, go: '/kitchen' },
+        { n: '02', title: t.workT, since: '2020', body: t.workB, go: '/work' },
+        { n: '03', title: t.svcT, since: '2024', body: t.svcB, go: '/services' }
+      ],
+      bakelog: isIt
+        ? [{ date: '18.07', name: 'Pizza napoletana', spec: '65% idr · 72h freddo' }, { date: '11.07', name: 'Croissant', spec: '3 pieghe · 27 strati' }, { date: '04.07', name: 'Pane di campagna', spec: '78% idr · 20h' }, { date: '27.06', name: 'Brioche feuilletée', spec: '40% burro' }]
+        : [{ date: '18.07', name: 'Pizza napoletana', spec: '65% hydr · 72h cold' }, { date: '11.07', name: 'Croissants', spec: '3 turns · 27 layers' }, { date: '04.07', name: 'Pain de campagne', spec: '78% hydr · 20h' }, { date: '27.06', name: 'Brioche feuilletée', spec: '40% butter' }]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

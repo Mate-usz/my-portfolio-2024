@@ -1,10 +1,14 @@
-import ServicesLanding from "@/app/ServicesLanding";
+import ServicesView from "@/components/nocturne/ServicesView";
+import it from "@/content/it";
 
+/*
+ * /services eredita il SEO della vecchia landing dei servizi (app/page.js):
+ * stesse keyword e stesso JSON-LD ProfessionalService, aggiornati con il
+ * quarto pacchetto (Store Shopify) e con l'URL definitivo della pagina.
+ */
 export const metadata = {
-  title:
-    "Sviluppatore Web Freelance a Perugia | Landing Page in 48h | Mateusz Rodz",
-  description:
-    "Sviluppatore web freelance a Perugia. Creo landing page performanti in 48-72 ore e risolvo bug per freelance e piccole attività in tutta Italia. Preventivo gratuito.",
+  title: it.services.metaTitle,
+  description: it.services.metaDescription,
   keywords: [
     "sviluppatore web freelance perugia",
     "landing page perugia",
@@ -14,19 +18,13 @@ export const metadata = {
     "landing page nextjs",
     "programmatore web freelance",
   ],
+  alternates: { canonical: "https://mateuszrodz.com/services" },
   openGraph: {
-    title: "Servizi Web per Freelance e Piccole Imprese",
-    description:
-      "Il tuo sito non porta clienti? Creo landing page professionali in 48 ore. Niente agenzie, parli direttamente con me.",
-    url: "https://mateuszrodz.com/#services",
-    siteName: "Mateusz Developer",
-    images: [
-      {
-        url: "https://mateuszrodz.com/og-image.png",
-        width: 1200,
-        height: 630,
-      },
-    ],
+    title: "Servizi web per piccole attività — Mateusz Rodz",
+    description: it.services.metaDescription,
+    url: "https://mateuszrodz.com/services",
+    siteName: "Mateusz Rodz",
+    images: [{ url: "https://mateuszrodz.com/og-image.png", width: 1200, height: 630 }],
     locale: "it_IT",
     type: "website",
   },
@@ -36,9 +34,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Mateusz Rodz - Sviluppatore Web Freelance",
-  url: "https://mateuszrodz.com",
+  url: "https://mateuszrodz.com/services",
   description:
-    "Sviluppo landing page professionali per freelance e piccole attività in 48-72 ore. Fix bug, ottimizzazione performance e soluzioni web su misura.",
+    "Sviluppo landing page professionali per freelance e piccole attività in 48-72 ore. Fix bug, ottimizzazione performance, prenotazioni e store Shopify.",
   areaServed: { "@type": "Country", name: "Italy" },
   address: {
     "@type": "PostalAddress",
@@ -80,19 +78,27 @@ const jsonLd = {
           priceCurrency: "EUR",
         },
       },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "Store Shopify" },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          minPrice: 900,
+          priceCurrency: "EUR",
+        },
+      },
     ],
   },
 };
 
-export default function Home() {
+export default function ServicesPage() {
   return (
-    <div className="relative min-h-screen bg-neutral-950">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_10%,rgba(80,80,255,0.12),transparent_80%)]"></div>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ServicesLanding />
-    </div>
+      <ServicesView />
+    </>
   );
 }

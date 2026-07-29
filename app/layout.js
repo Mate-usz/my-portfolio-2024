@@ -1,5 +1,14 @@
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+// Inter, pesi 400 e 500: è il font del design system Nocturne (pagine nuove).
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +44,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${astonpoliz.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${astonpoliz.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>

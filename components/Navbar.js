@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const t = {
-  en: { services: "Services", home: "Home", projects: "Projects", contact: "Contact me", light: "Light Mode", dark: "Dark Mode" },
-  it: { services: "Servizi", home: "Home", projects: "Progetti", contact: "Contattami", light: "Tema Chiaro", dark: "Tema Scuro" },
+  en: { services: "Services", home: "Home", projects: "Projects", contact: "Contact me", light: "Light Mode", dark: "Dark Mode", sfornati: "Baked" },
+  it: { services: "Servizi", home: "Home", projects: "Progetti", contact: "Contattami", light: "Tema Chiaro", dark: "Tema Scuro", sfornati: "Sfornati" },
 };
 
 export default function Navbar({ locale = "en" }) {
@@ -29,9 +29,10 @@ export default function Navbar({ locale = "en" }) {
   }, []);
 
   const links = [
-    { href: "/", label: <><ArrowLeft className="w-4 h-4 inline mr-1" />{s.services}</>, className: "text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition" },
+    { href: "/services", label: <><ArrowLeft className="w-4 h-4 inline mr-1" />{s.services}</>, className: "text-gray-500 hover:text-gray-800 dark:hover:text-gray-200 transition" },
     { href: "/portfolio", label: s.home },
     { href: "/projects", label: s.projects },
+    { href: "/sfornati", label: s.sfornati },
     { href: "/contact", label: s.contact },
   ];
 
