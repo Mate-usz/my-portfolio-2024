@@ -7,7 +7,7 @@ import { useLang } from "./LangProvider";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import { ContactCells } from "./Contacts";
-import { Bullets, Photo, SectionHead } from "./Bits";
+import { ArrowRight, Bullets, Photo, SectionHead } from "./Bits";
 
 export default function KitchenView() {
   const { t } = useLang();
@@ -96,13 +96,13 @@ export default function KitchenView() {
 
         <div className="nc-pad" style={{ paddingTop: 14 }}>
           <p className="nc-handnote">
-            <span>
-              {k.logFoot}{" "}
-              <Link href={k.logFootLink} style={{ color: "var(--color-accent-300)" }}>
-                {k.logFootLink}
-              </Link>
-            </span>
+            <span>{k.logFoot}</span>
           </p>
+          <div>
+            <Link href={k.archiveHref} className="nc-archive">
+              {k.archiveCta} <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
 
         {/* 04 */}

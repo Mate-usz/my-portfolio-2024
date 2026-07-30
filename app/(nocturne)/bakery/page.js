@@ -11,11 +11,11 @@ export const metadata = {
     "portfolio culinario",
     "pizza fatta in casa",
   ],
-  alternates: { canonical: "https://mateuszrodz.com/kitchen" },
+  alternates: { canonical: "https://mateuszrodz.com/bakery" },
   openGraph: {
     title: `${it.kitchen.title} — Mateusz Rodz`,
     description: it.kitchen.metaDescription,
-    url: "https://mateuszrodz.com/kitchen",
+    url: "https://mateuszrodz.com/bakery",
     siteName: "Mateusz Rodz",
     images: [{ url: "https://mateuszrodz.com/og-image.png", width: 1200, height: 630 }],
     locale: "it_IT",

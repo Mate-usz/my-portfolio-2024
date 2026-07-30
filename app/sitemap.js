@@ -3,7 +3,7 @@ export default function sitemap() {
   const now = new Date();
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/kitchen`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${base}/bakery`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${base}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/work`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/sfornati`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },

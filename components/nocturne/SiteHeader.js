@@ -24,13 +24,20 @@ function LangToggle() {
  * gruppo a sinistra, CTA e toggle a destra. Su mobile le pagine interne hanno
  * l'header sticky e il CTA scende sotto la hero (lo nasconde il CSS).
  */
-export default function SiteHeader({ current = null, cta = null, sticky = false }) {
+export default function SiteHeader({
+  current = null,
+  cta = null,
+  // di default il CTA apre il client di posta; /services lo punta alla barra
+  // di prenotazione in pagina
+  ctaHref = contacts.mailto,
+  sticky = false,
+}) {
   const { t } = useLang();
   const home = current === null;
 
   const nav = (
     <nav className={home ? "nc-nav nc-nav-home" : "nc-nav"}>
-      <Link href="/kitchen" aria-current={current === "kitchen" ? "page" : undefined}>
+      <Link href="/bakery" aria-current={current === "kitchen" ? "page" : undefined}>
         {t.nav.kitchen}
       </Link>
       <Link href="/work" aria-current={current === "work" ? "page" : undefined}>
@@ -64,7 +71,7 @@ export default function SiteHeader({ current = null, cta = null, sticky = false 
           </div>
           <div className="nc-header-right">
             {cta && (
-              <a className="nc-btn nc-btn-sm" href={contacts.mailto}>
+              <a className="nc-btn nc-btn-sm" href={ctaHref}>
                 {cta}
               </a>
             )}

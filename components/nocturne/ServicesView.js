@@ -1,16 +1,16 @@
 "use client";
 
-import { contacts } from "@/content";
 import { serviceJobs } from "@/content/media";
 import { useLang } from "./LangProvider";
 import SiteHeader from "./SiteHeader";
 import SiteFooter from "./SiteFooter";
 import { ContactStack } from "./Contacts";
 import { Photo, SectionHead } from "./Bits";
+import BookingBar from "./BookingBar";
 
 /*
- * Servizi. Quattro blocchi numerati: pacchetti a prezzo fisso, processo,
- * lavori recenti, cosa non faccio. Le foto arrivano da media.serviceJobs e i
+ * Servizi. Cinque blocchi numerati: pacchetti a prezzo fisso, prenotazione
+ * della call, processo, lavori recenti, cosa non faccio. Le foto arrivano da media.serviceJobs e i
  * testi da services.jobs: sono allineati per indice, come nella cucina.
  */
 export default function ServicesView() {
@@ -26,7 +26,7 @@ export default function ServicesView() {
   return (
     <div className="nocturne">
       <div className="nc-page">
-        <SiteHeader current="services" cta={s.cta} sticky />
+        <SiteHeader current="services" cta={s.cta} ctaHref="#prenota" sticky />
 
         <section className="nc-hero">
           <div>
@@ -41,7 +41,7 @@ export default function ServicesView() {
 
         {/* Sotto i 900px il CTA dell'header ricompare qui: lo mostra il CSS. */}
         <div className="nc-hero-cta">
-          <a className="nc-btn nc-btn-block" href={contacts.mailto}>
+          <a className="nc-btn nc-btn-block" href="#prenota">
             {s.cta}
           </a>
         </div>
@@ -68,8 +68,16 @@ export default function ServicesView() {
           </div>
         </section>
 
+        <section className="nc-block-lg" id="prenota">
+          <SectionHead n="02" title={s.booking.title} mb={8} />
+          <p className="nc-note" style={{ maxWidth: 620 }}>
+            {s.booking.lead}
+          </p>
+          <BookingBar />
+        </section>
+
         <section className="nc-block-lg">
-          <SectionHead n="02" title={s.how} mb={22} />
+          <SectionHead n="03" title={s.how} mb={22} />
           <div className="nc-steps">
             {s.steps.map((step) => (
               <div key={step.n} className="nc-step">
@@ -82,7 +90,7 @@ export default function ServicesView() {
         </section>
 
         <section className="nc-block-lg">
-          <SectionHead n="03" title={s.proof} mb={8} />
+          <SectionHead n="04" title={s.proof} mb={8} />
           <p className="nc-note">
             {s.proofNote}
           </p>
@@ -113,9 +121,9 @@ export default function ServicesView() {
 
         <div className="nc-close">
           <div className="nc-close-main">
-            <SectionHead n="04" title={s.no} mb={12} />
+            <SectionHead n="05" title={s.no} mb={12} />
             <p className="nc-close-body nc-pretty">{s.noBody}</p>
-            <a className="nc-btn" href={contacts.mailto}>
+            <a className="nc-btn" href="#prenota">
               {s.cta}
             </a>
           </div>
